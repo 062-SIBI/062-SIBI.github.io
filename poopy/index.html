@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>똥키우기 (Poopy) · 시영욱 포트폴리오</title>
+<meta name="description" content="혼자 기획하고 만든 웹 게임 똥키우기(Poopy)가 Unity 기획에서 지금의 웹 게임 v4가 되기까지를 사진으로 보여 줍니다.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="똥키우기 (Poopy) · 시영욱 포트폴리오">
+<meta property="og:description" content="똥에게 먹이를 주고 46종 도감을 채우는 웹 게임입니다.">
+<meta property="og:url" content="https://062-sibi.github.io/poopy/">
+<meta property="og:image" content="https://062-sibi.github.io/poopy/img/20260820_%EC%BB%A4%EB%B2%84_%ED%82%A4%EC%95%84%ED%8A%B8.jpg">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=Noto+Sans+KR:wght@400;500;700;900&amp;display=swap">
+<style>
+:root{
+  --ink:#111111;--paper:#FFFFFF;--mist:#F4F4F2;--line:#E2E2DE;--muted:#5F5F5A;--text:#3A3A36;
+  --on-ink:#F4F4F2;--on-ink-muted:#A6A6A0;--line-ink:#2C2C2A;
+  --f-kr:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --f-num:"Archivo","Noto Sans KR","Apple SD Gothic Neo","Helvetica Neue",Arial,sans-serif;
+  --s-title:clamp(44px,7.4vw,92px);--s-h2:clamp(28px,4.2vw,48px);--s-h3:clamp(19px,2vw,23px);
+  --s-lead:clamp(18px,1.7vw,22px);--s-body:16.5px;--s-small:15px;--s-cap:13px;
+  --gut:max(16px,env(safe-area-inset-left,0px));--gut-r:max(16px,env(safe-area-inset-right,0px));
+  --band:clamp(64px,8.5vw,112px);--r:12px;--row-h:600px;
+  color-scheme:light;
+}
+@media (min-width:768px){:root{--gut:max(40px,env(safe-area-inset-left,0px));--gut-r:max(40px,env(safe-area-inset-right,0px))}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-kr);font-size:var(--s-body);line-height:1.7;
+  -webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word;letter-spacing:-.015em}
+h1,h2,h3,p,figure,dl,dd,ol,ul{margin:0}
+ol,ul{padding:0;list-style:none}
+h1,h2,h3{text-wrap:balance}
+p,figcaption,dd{text-wrap:pretty}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+.ink :focus-visible{outline-color:var(--on-ink)}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:10px 16px;z-index:50}
+.skip:focus{left:var(--gut);top:8px}
+.wrap{max-width:1200px;margin-inline:auto;padding-left:var(--gut);padding-right:var(--gut-r)}
+.num,.date{font-family:var(--f-num);font-variant-numeric:tabular-nums}
+
+/* 맨 위 줄 */
+.top{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:56px}
+.back{font-weight:700;font-size:15px;text-decoration:none;padding:8px 0;white-space:nowrap}
+.pj{display:flex;align-items:center;gap:2px}
+.pj a{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 4px;
+  font-family:var(--f-num);font-weight:700;font-size:13px;letter-spacing:.02em;color:var(--muted);text-decoration:none;border-radius:999px}
+.pj a[aria-current="page"]{color:var(--paper);background:var(--accent-ink)}
+@media (hover:hover) and (pointer:fine){ .back:hover{color:var(--accent-ink)} .pj a:not([aria-current]):hover{color:var(--ink);background:var(--mist)} }
+
+/* 표지 */
+.cover{padding-block:clamp(36px,6vw,80px) clamp(48px,6vw,80px)}
+.kicker{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
+.kicker .idx{font-family:var(--f-num);font-weight:700;font-size:13px;letter-spacing:.06em;color:var(--muted)}
+.status{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:var(--accent-soft);
+  color:var(--accent-ink);font-size:13.5px;font-weight:700;line-height:1.3}
+.status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none}
+.title{margin-top:18px;font-size:var(--s-title);font-weight:900;line-height:1.05;letter-spacing:-.045em}
+.title .en{font-family:var(--f-num);font-weight:700;font-size:.4em;letter-spacing:-.01em;color:var(--muted);margin-left:.35em;vertical-align:.22em;white-space:nowrap}
+.summary{margin-top:18px;font-size:var(--s-lead);line-height:1.6;font-weight:500;max-width:30em}
+.meta{margin-top:clamp(28px,4vw,40px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1.5px solid var(--ink)}
+.meta div{padding:14px 18px 0 0;min-width:0}
+.meta div+div{padding-left:18px;border-left:1px solid var(--line)}
+.meta dt{font-size:var(--s-cap);color:var(--muted);font-weight:500}
+.meta dd{margin-top:4px;font-size:15px;line-height:1.6}
+@media (max-width:767px){
+  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .meta div:nth-child(3){padding-left:0;border-left:0}
+  .meta div:nth-child(n+3){margin-top:14px;border-top:1px solid var(--line)}
+}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 22px;border-radius:999px;
+  font:700 15.5px/1 var(--f-kr);letter-spacing:-.01em;text-decoration:none;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper);
+  transition:transform 120ms ease-out,opacity 150ms ease}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn:active{transform:translateY(1px)}
+@media (hover:hover) and (pointer:fine){ .btn:hover{opacity:.86} }
+.cover-fig{margin-top:clamp(32px,5vw,56px)}
+.cover-fig img{width:100%;border-radius:var(--r);background:var(--mist)}
+
+/* 섹션 공통 */
+.sec{padding-block:var(--band)}
+.mist{background:var(--mist)}
+.ink{background:var(--ink);color:var(--on-ink)}
+.sec-head h2{font-size:var(--s-h2);font-weight:900;line-height:1.25;letter-spacing:-.035em}
+.sec-head p{margin-top:10px;color:var(--muted);font-size:var(--s-small);line-height:1.7;max-width:44em}
+.ink .sec-head p{color:var(--on-ink-muted)}
+
+/* 사진 줄: 같은 줄 사진은 높이를 맞추고, 줄 전체 높이는 --row-h를 넘지 않게 */
+.media{display:grid;gap:20px;min-width:0}
+.row{display:flex;gap:12px;align-items:flex-start;max-width:calc(var(--sum) * var(--row-h))}
+.row>figure{flex:calc(var(--ar) * 100) 1 0;min-width:0}
+figure img{width:100%;border-radius:10px;background:var(--mist);border:1px solid var(--line)}
+.mist figure img{border-color:#DADAD5}
+figcaption{margin-top:8px;font-size:var(--s-cap);line-height:1.55;color:var(--muted)}
+figcaption time{font-family:var(--f-num);font-weight:600;color:var(--ink);margin-right:6px;font-variant-numeric:tabular-nums}
+@media (max-width:639px){
+  .row:not(.keep){flex-direction:column;gap:18px;max-width:none}
+  .row:not(.keep)>figure{flex:none;width:100%;max-width:calc(var(--ar) * 520px)}
+  .row.keep{gap:8px;max-width:calc(var(--sum) * 440px)}
+}
+
+/* 성장 과정 */
+.stages{margin-top:clamp(32px,4vw,56px);border-top:1.5px solid var(--ink)}
+.stage{display:grid;gap:18px;padding-block:28px 40px;border-bottom:1px solid var(--line)}
+.stage:last-child{border-bottom:0;padding-bottom:0}
+.stage-date{display:block;font-family:var(--f-num);font-weight:700;font-size:15px;letter-spacing:.01em;color:var(--accent-ink);font-variant-numeric:tabular-nums}
+.stage h3{margin-top:6px;font-size:var(--s-h3);font-weight:700;line-height:1.45;letter-spacing:-.02em}
+.stage .why{margin-top:8px;font-size:15px;line-height:1.7;color:var(--text)}
+.stage .src{margin-top:8px;font-size:12.5px;line-height:1.6;color:var(--muted)}
+.ver{font-family:var(--f-num);font-weight:700}
+@media (min-width:1000px){
+  .stage{grid-template-columns:260px minmax(0,1fr);gap:48px;padding-block:36px 48px}
+  .stage-text{position:sticky;top:80px;align-self:start}
+}
+
+/* 처음과 지금 */
+.pairs{margin-top:clamp(32px,4vw,56px);display:grid;gap:clamp(48px,6vw,72px)}
+.pair h3{font-size:var(--s-h3);font-weight:700;line-height:1.45;letter-spacing:-.02em}
+.pair .what{margin-top:6px;font-size:var(--s-small);color:var(--text);max-width:42em}
+.pair .row{margin-top:20px}
+.ba{display:flex;align-items:baseline;gap:8px;margin-bottom:8px;font-size:14px;color:var(--muted)}
+.ba b{color:var(--ink);font-weight:800}
+.ba time{font-family:var(--f-num);font-weight:600}
+.after .ba b{text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:3px;text-underline-offset:5px}
+.pair .note{margin-top:12px;font-size:var(--s-cap);color:var(--muted)}
+@media (min-width:1000px){ .pairs{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:40px} .pair.wide{grid-column:1/-1} }
+
+/* 숫자 */
+.stats{margin-top:clamp(32px,4vw,48px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 24px}
+.stat{padding-top:18px;border-top:3px solid var(--accent-on-ink);display:flex;flex-direction:column;gap:8px;min-width:0}
+.stat .n{font-family:var(--f-num);font-variation-settings:"wdth" 72;font-weight:800;font-size:clamp(40px,5.2vw,66px);line-height:1;
+  letter-spacing:-.02em;color:var(--on-ink);font-variant-numeric:tabular-nums}
+.stat .n small{font-family:var(--f-kr);font-size:.36em;font-weight:700;color:var(--on-ink-muted);margin-left:4px;letter-spacing:-.01em}
+.stat .n .pre{font-family:var(--f-kr);font-size:.36em;font-weight:700;color:var(--on-ink-muted);margin-right:4px}
+.stat .lb{margin-top:4px;font-size:15px;font-weight:700;line-height:1.5}
+.stat .sub{font-size:13.5px;line-height:1.55;color:var(--on-ink-muted)}
+.stat .src{margin-top:auto;padding-top:6px;font-size:12.5px;line-height:1.55;color:var(--on-ink-muted)}
+.stat .src time{font-family:var(--f-num);color:var(--on-ink)}
+@media (max-width:899px){ .stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 16px} }
+
+/* 지금과 다음 */
+.now-grid{margin-top:clamp(32px,4vw,48px);display:grid;gap:32px;align-items:start}
+@media (min-width:900px){ .now-grid{grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px} }
+.now-list{border-top:1.5px solid var(--ink)}
+.now-list div{display:grid;grid-template-columns:56px minmax(0,1fr);gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.now-list dt{font-size:var(--s-small);color:var(--muted);font-weight:500;padding-top:1px}
+.now-list dd{font-size:16.5px;line-height:1.7}
+.links{display:flex;flex-direction:column;gap:6px}
+.links a{font-weight:700;color:var(--accent-ink);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px;overflow-wrap:anywhere}
+.links .plain{font-size:var(--s-small);color:var(--muted)}
+
+/* 다른 프로젝트 */
+.pn{padding-block:var(--band);border-top:1px solid var(--line)}
+.pn h2{font-size:var(--s-cap);font-family:var(--f-num);font-weight:700;letter-spacing:.06em;color:var(--muted)}
+.pn-grid{margin-top:20px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.pn-card{display:flex;flex-direction:column;gap:10px;text-decoration:none;color:inherit;min-width:0}
+.pn-card img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:10px;background:var(--mist);transition:opacity 200ms ease}
+.pn-k{font-size:13px;color:var(--muted);font-weight:500}
+.pn-name{font-size:clamp(18px,2.4vw,28px);font-weight:900;line-height:1.25;letter-spacing:-.03em}
+.pn-one{font-size:14px;color:var(--muted);line-height:1.5}
+.pn-card.next{text-align:right}
+.pn-all{display:inline-flex;align-items:center;min-height:46px;margin-top:36px;font-weight:700;font-size:16px;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1.5px}
+@media (hover:hover) and (pointer:fine){ .pn-card:hover img{opacity:.86} .pn-card:hover .pn-name{color:var(--accent-ink)} }
+
+.foot{border-top:1px solid var(--line);padding-block:24px 40px;font-size:var(--s-cap);color:var(--muted)}
+.foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px}
+.foot a{color:var(--ink);font-weight:700;text-decoration:none}
+
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *{transition:none!important} }
+@media print{
+  @page{size:A4;margin:14mm}
+  .top,.skip,.pn,.btns{display:none!important}
+  .sec,.cover{padding-block:8mm}
+  .stage-text{position:static}
+  .ink,.mist{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  figure,.stage-text,.pair,.stat,.now-list div,.meta{break-inside:avoid}
+  h2,h3,.stage-text{break-after:avoid}
+  img{max-height:150mm;width:auto!important;max-width:100%!important;object-fit:contain}
+}
+
+:root{--accent:#8B5A2B;--accent-ink:#8B5A2B;--accent-soft:#F0EAE3;--accent-on-ink:#C08A55}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="top">
+  <div class="wrap">
+    <a class="back" href="../">← 시영욱 포트폴리오</a>
+    <nav class="pj" aria-label="프로젝트 이동"><a href="../padd/" title="꾹꾹이" aria-label="01 꾹꾹이">01</a><a href="../4fl/" title="4FL" aria-label="02 4FL">02</a><a href="../tete/" title="Two Eyes Two Ears" aria-label="03 Two Eyes Two Ears">03</a><a href="../poopy/" title="똥키우기" aria-label="04 똥키우기" aria-current="page">04</a><a href="../hokkuki/" title="호꾹이" aria-label="05 호꾹이">05</a></nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="cover" aria-labelledby="title">
+  <div class="wrap">
+    <p class="kicker"><span class="idx">프로젝트 04 / 05</span><span class="status">유지 운영 · v4</span></p>
+    <h1 class="title" id="title">똥키우기 <span class="en">Poopy</span></h1>
+    <p class="summary">똥에게 먹이를 주고 46종 도감을 채우는 웹 게임입니다.</p>
+    <dl class="meta"><div><dt>역할</dt><dd>1인 개발. 기획, 밸런싱, 개발, 배포</dd></div><div><dt>기간</dt><dd>2026.07.03 ~ 지금</dd></div><div><dt>함께한 사람</dt><dd>혼자 만들었습니다</dd></div><div><dt>도구</dt><dd>AI 도구(그림, 코드), GitHub Pages, itch.io</dd></div></dl>
+    <div class="btns"><a class="btn" href="https://poopygame.com" target="_blank" rel="noopener">poopygame.com에서 플레이 ↗</a></div>
+    <figure class="cover-fig"><img src="img/20260820_커버_키아트.jpg" width="1600" height="900" fetchpriority="high" decoding="async" alt="갈색 배경에 Poopy 글자와 박쥐 날개를 단 붉은 드래곤똥, 아래에 유니콘똥, 무지개똥, 불사조똥이 놓인 대표 이미지"><figcaption><time>2026.08.20</time>게임 페이지에 쓰는 대표 이미지입니다.</figcaption></figure>
+  </div>
+</section>
+<section class="sec" id="growth" aria-labelledby="growth-h">
+  <div class="wrap">
+    <header class="sec-head"><h2 id="growth-h">자라 온 과정</h2><p>Unity로 기획한 모바일 게임이 HTML 파일 하나짜리 웹 게임이 되기까지입니다.</p></header>
+    <ol class="stages">
+      <li class="stage">
+        <div class="stage-text"><time class="stage-date">2026.07.03</time><h3>Unity 모바일 게임으로 기획했습니다</h3><p class="why">유전 교배로 희귀한 똥을 노리는 안드로이드 앱이 처음 구상이었습니다.</p></div>
+        <div class="media"><div class="row" style="--sum:2.566"><figure style="--ar:1.819"><img src="img/20260707_기획안_한눈에보기.png" width="1035" height="569" loading="lazy" decoding="async" alt="기획안 v1.0의 한눈에 보기 쪽. 장르 수집형 방치, 플랫폼 모바일 앱, 엔진 Unity 2D가 적힌 표"><figcaption><time>2026.07.07</time>기획안 v1.0입니다. 엔진은 Unity 2D, 플랫폼은 안드로이드 앱이었습니다.</figcaption></figure><figure style="--ar:0.747"><img src="img/20260712_공룡똥_스타일앵커.jpg" width="896" height="1200" loading="lazy" decoding="async" alt="굵은 갈색 선으로 그린 초록색 평면 2D 공룡똥 캐릭터"><figcaption><time>2026.07.12</time>처음 잡은 그림체입니다. 선이 굵은 평면 2D였습니다.</figcaption></figure></div></div>
+      </li>
+      <li class="stage">
+        <div class="stage-text"><time class="stage-date">2026.08.06</time><h3>HTML 파일 하나짜리 웹 게임으로 바꿨습니다</h3><p class="why">그림체도 세 가지를 비교해 클레이로 정했습니다.</p></div>
+        <div class="media"><div class="row" style="--sum:1.848"><figure style="--ar:1.848"><img src="img/20260805_아트_3안_비교.jpg" width="1260" height="682" loading="lazy" decoding="async" alt="같은 똥 캐릭터 여섯 종을 평면 2D, 클레이 1안, 클레이 2안 세 줄로 그려 비교한 시안"><figcaption><time>2026.08.05</time>위부터 평면 2D, 클레이 1안, 클레이 2안입니다. 가운데 줄을 골랐습니다.</figcaption></figure></div><div class="row keep" style="--sum:1.091"><figure style="--ar:0.558"><img src="img/20260806_첫_웹빌드.png" width="480" height="860" loading="lazy" decoding="async" alt="첫 웹 빌드 화면. 위쪽 여섯 칸에 똥이 놓이고 아래에서 먹이 두 개를 고르는 구조"><figcaption><time>2026.08.06</time>첫 웹 빌드입니다. 칸에 먹이를 넣으면 똥이 나왔습니다.</figcaption></figure><figure style="--ar:0.533"><img src="img/20260806_v2_배경추가.jpg" width="480" height="900" loading="lazy" decoding="async" alt="v2 화면. 초원 배경 가운데 왕관을 쓴 황금똥이 있고 아래에 먹이 주기 메뉴가 있는 화면"><figcaption><time>2026.08.06</time>같은 날 만든 v2입니다. 배경을 그리고 똥을 크게 키웠습니다.</figcaption></figure></div></div>
+      </li>
+      <li class="stage">
+        <div class="stage-text"><time class="stage-date">2026.08.09</time><h3>유전 교배를 빼고 레시피 79개로 다시 짰습니다</h3><p class="why">칸에 먹이만 넣는 구조에는 키우는 대상이 없었습니다. 부모 똥에게 먹이를 주면 새 똥이 나오게 바꿨습니다.</p></div>
+        <div class="media"><div class="row" style="--sum:1.868"><figure style="--ar:1.400"><img src="img/20260809_클레이_35종.jpg" width="1400" height="1000" loading="lazy" decoding="async" alt="클레이 그림체로 만든 똥 캐릭터 35종을 7열 5줄로 모은 시트"><figcaption><time>2026.08.09</time>클레이 그림체로 확정한 35종입니다.</figcaption></figure><figure style="--ar:0.468"><img src="img/20260821_조합법_화면.jpg" width="720" height="1540" loading="lazy" decoding="async" alt="조합법 화면. 부모 똥 아래에 먹이와 결과 똥, 조합 종류와 성공 확률이 줄마다 적힌 영어 화면"><figcaption><time>2026.08.21</time>조합법 화면입니다. 부모 똥, 먹이, 결과, 확률을 한 줄에 보여 줍니다(영어 화면).</figcaption></figure></div><div class="row" style="--sum:2.512"><figure style="--ar:2.512"><img src="img/20260809_신종_11종.jpg" width="1030" height="410" loading="lazy" decoding="async" alt="새로 더한 오리, 너구리, 쇠똥구리, 말벌, 물개, 하마, 오리너구리, 불사조, 마그마, 심해, 새싹 똥 11종"><figcaption><time>2026.08.09</time>재설계에 맞춰 11종을 더해 46종이 됐습니다.</figcaption></figure></div></div>
+      </li>
+      <li class="stage">
+        <div class="stage-text"><time class="stage-date">2026.08.18</time><h3>itch.io에 공개했습니다</h3><p class="why">AI로 만든 그림과 코드는 게임 페이지에 먼저 밝혔습니다.</p></div>
+        <div class="media"><div class="row" style="--sum:0.913"><figure style="--ar:0.913"><img src="img/20261125_itchio_페이지.jpg" width="1440" height="1578" loading="lazy" decoding="async" alt="itch.io 게임 페이지. 가운데에 바로 플레이할 수 있는 게임 화면이 들어가 있고 아래에 영어 소개 글이 있음"><figcaption><time>2026.11.25 캡처</time>itch.io 게임 페이지입니다. 페이지 안에서 바로 플레이됩니다.</figcaption></figure></div></div>
+      </li>
+      <li class="stage">
+        <div class="stage-text"><time class="stage-date">2026.08.19</time><h3>GitHub Pages로 옮겨 poopygame.com을 열었습니다</h3><p class="why">조합법 안내, 도감, 개발 노트 페이지를 함께 올렸습니다.</p></div>
+        <div class="media"><div class="row" style="--sum:2.156"><figure style="--ar:2.156"><img src="img/20261125_poopygame_도감페이지.jpg" width="1600" height="742" loading="lazy" decoding="async" alt="poopygame.com의 Poopdex 안내 페이지. 46종을 등급별로 찾아가는 목록이 있음"><figcaption><time>2026.11.25 캡처</time>도감 안내 페이지입니다. 46종을 등급별로 정리했습니다.</figcaption></figure></div></div>
+      </li>
+      <li class="stage">
+        <div class="stage-text"><time class="stage-date">2026.08.20</time><h3><span class="ver">v4</span> 빌드를 10.3MB에서 1.6MB로 줄였습니다</h3><p class="why">이미지를 WebP로 바꿨습니다. 30일 경제 시뮬레이션과 자동 시험으로 밸런스와 버그를 확인합니다.</p></div>
+        <div class="media"><div class="row" style="--sum:0.444"><figure style="--ar:0.444"><img src="img/20260821_v4_꾸민_똥칸.jpg" width="711" height="1600" loading="lazy" decoding="async" alt="v4 화면. 꽃밭, 버섯, 울타리, 양동이로 꾸민 똥칸 가운데에 불사조똥이 앉아 있는 영어 화면"><figcaption><time>2026.08.21</time>플레이 영상의 한 장면입니다. 꾸민 똥칸에서 전설 등급 불사조똥을 키웁니다(영어 화면).</figcaption></figure></div></div>
+      </li>
+    </ol>
+  </div>
+</section>
+<section class="sec mist" id="compare" aria-labelledby="compare-h">
+  <div class="wrap">
+    <header class="sec-head"><h2 id="compare-h">처음과 지금</h2></header>
+    <div class="pairs">
+      <article class="pair wide"><h3>먹이 주는 화면</h3><p class="what">먹이 2개를 고르면 이모지 똥이 나오던 데모가, 똥칸에 사는 똥에게 먹이를 주는 게임이 됐습니다.</p><div class="row" style="--sum:1.850"><figure class="before" style="--ar:1.388"><p class="ba"><b>처음</b><time>2026.07.12</time></p><img src="img/20260712_프로토타입_v01.png" width="851" height="613" loading="lazy" decoding="async" alt="프로토타입 v0.1. 갈색 머리띠 아래 먹이 버튼 여덟 개, 똥 싸기 버튼, 결과로 쥐똥 이모지가 나온 화면"></figure><figure class="after" style="--ar:0.462"><p class="ba"><b>지금</b><time>2026.11.25</time></p><img src="img/20261125_v4_먹이주기.jpg" width="739" height="1600" loading="lazy" decoding="async" alt="v4 홈 화면. 초원 배경 똥칸에 다람쥐똥이 있고 아래에서 풀을 골라 먹이 주기 버튼이 켜진 화면"></figure></div></article>
+      <article class="pair wide"><h3>도감</h3><p class="what">37칸 중 3칸을 채운 이모지 도감이, 못 찾은 똥을 실루엣으로 보여 주는 46종 도감이 됐습니다.</p><div class="row" style="--sum:2.300"><figure class="before" style="--ar:1.838"><p class="ba"><b>처음</b><time>2026.07.12</time></p><img src="img/20260712_프로토타입_v01_도감.png" width="851" height="463" loading="lazy" decoding="async" alt="v0.1 도감. 37칸 가운데 쥐똥, 무당벌레똥, 돼지똥 세 칸만 이모지로 채워지고 나머지는 물음표인 화면"></figure><figure class="after" style="--ar:0.462"><p class="ba"><b>지금</b><time>2026.11.25</time></p><img src="img/20261125_v4_도감.jpg" width="739" height="1600" loading="lazy" decoding="async" alt="v4 도감. 46종 중 11종을 찾은 상태로, 찾은 똥은 클레이 캐릭터로, 못 찾은 똥은 회색 실루엣으로 보이는 화면"></figure></div></article>
+    </div>
+  </div>
+</section>
+<section class="sec ink" id="numbers" aria-labelledby="numbers-h">
+  <div class="wrap">
+    <header class="sec-head"><h2 id="numbers-h">숫자</h2><p>게임 데이터, 빌드 파일, 개발 노트에서 읽은 값입니다.</p></header>
+    <ul class="stats">
+      <li class="stat"><p class="n">46<small>종</small></p><p class="lb">똥 종류</p><p class="sub">조합 레시피는 79개입니다.</p><p class="src">기준 <time>2026.11.25</time><br>출처 poopygame.com 게임 데이터</p></li>
+      <li class="stat"><p class="n">1.6<small>MB</small></p><p class="lb">v4 빌드 용량</p><p class="sub">WebP로 바꾸기 전에는 10.3MB였습니다.</p><p class="src">기준 <time>2026.08.20</time><br>출처 v4 빌드 파일</p></li>
+      <li class="stat"><p class="n"><span class="pre">약</span>480<small>개</small></p><p class="lb">자동 시험 확인 항목</p><p class="sub">시험 묶음은 16개입니다.</p><p class="src">기준 <time>2026.08.19</time><br>출처 poopygame.com 개발 노트</p></li>
+      <li class="stat"><p class="n">30<small>일</small></p><p class="lb">경제 시뮬레이션 기간</p><p class="sub">밸런스를 맞추려고 돌려 본 기간입니다.</p><p class="src">기준 <time>2026.08.19</time><br>출처 poopygame.com 개발 노트</p></li>
+    </ul>
+  </div>
+</section>
+<section class="sec" id="now" aria-labelledby="now-h">
+  <div class="wrap">
+    <header class="sec-head"><h2 id="now-h">지금과 다음</h2></header>
+    <div class="now-grid">
+      <div class="row" style="--sum:0.462"><figure style="--ar:0.462"><img src="img/20261125_v4_새똥발견.jpg" width="739" height="1600" loading="lazy" decoding="async" alt="새 똥 발견 창. 고급 등급 고양이똥과 반드시 파묻는다, 도도하다는 설명, 좋아 버튼이 있는 화면"><figcaption><time>2026.11.25</time>새 똥을 찾으면 뜨는 발견 창입니다.</figcaption></figure></div>
+      <dl class="now-list"><div><dt>지금</dt><dd>v4로 유지 운영 중입니다. 휴대폰과 PC 브라우저에서 설치 없이 열립니다.</dd></div><div><dt>다음</dt><dd>플레이 의견을 받아 작은 수정을 이어 갑니다.</dd></div><div><dt>링크</dt><dd><p class="links"><a href="https://poopygame.com" target="_blank" rel="noopener">poopygame.com에서 플레이 →</a><a href="https://github.com/062-SIBI/poopygame" target="_blank" rel="noopener">GitHub 저장소 →</a></p></dd></div></dl>
+    </div>
+  </div>
+</section>
+
+<nav class="pn" aria-labelledby="pn-h">
+  <div class="wrap">
+    <h2 id="pn-h">다른 프로젝트</h2>
+    <div class="pn-grid">
+      <a class="pn-card prev" href="../tete/"><img src="../tete/img/20261121_지금의_두사람_시안A.jpg" width="1536" height="779" loading="lazy" decoding="async" alt=""><span class="pn-k">← 이전 · 03</span><span class="pn-name">Two Eyes Two Ears</span><span class="pn-one">2인 협동 공포 게임</span></a>
+      <a class="pn-card next" href="../hokkuki/"><img src="../hokkuki/img/20260813_채널배너.jpg" width="1600" height="900" loading="lazy" decoding="async" alt=""><span class="pn-k">다음 · 05 →</span><span class="pn-name">호꾹이</span><span class="pn-one">유튜브 채널</span></a>
+    </div>
+    <a class="pn-all" href="../">← 시영욱 포트폴리오 · 모든 작업 보기</a>
+  </div>
+</nav>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>사진은 실제 게임 화면과 작업 파일입니다.</p>
+    <p>© 2026 시영욱</p>
+  </div>
+</footer>
+</body>
+</html>

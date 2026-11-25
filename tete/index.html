@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Two Eyes Two Ears · 시영욱 포트폴리오</title>
+<meta name="description" content="보는 할머니와 듣는 할아버지의 2인 협동 공포 게임. 2026.08.26부터 지금까지 자라 온 과정을 사진으로 정리했습니다.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Two Eyes Two Ears · 시영욱 포트폴리오">
+<meta property="og:description" content="보는 할머니와 듣는 할아버지의 2인 협동 공포 게임입니다.">
+<meta property="og:url" content="https://062-sibi.github.io/tete/">
+<meta property="og:image" content="https://062-sibi.github.io/tete/img/20261121_%EC%A7%80%EA%B8%88%EC%9D%98_%EB%91%90%EC%82%AC%EB%9E%8C_%EC%8B%9C%EC%95%88A.jpg">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=Noto+Sans+KR:wght@400;500;700;900&amp;display=swap">
+<style>
+:root{
+  --ink:#111111;--paper:#FFFFFF;--mist:#F4F4F2;--line:#E2E2DE;--muted:#5F5F5A;--text:#3A3A36;
+  --on-ink:#F4F4F2;--on-ink-muted:#A6A6A0;--line-ink:#2C2C2A;
+  --f-kr:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --f-num:"Archivo","Noto Sans KR","Apple SD Gothic Neo","Helvetica Neue",Arial,sans-serif;
+  --s-title:clamp(44px,7.4vw,92px);--s-h2:clamp(28px,4.2vw,48px);--s-h3:clamp(19px,2vw,23px);
+  --s-lead:clamp(18px,1.7vw,22px);--s-body:16.5px;--s-small:15px;--s-cap:13px;
+  --gut:max(16px,env(safe-area-inset-left,0px));--gut-r:max(16px,env(safe-area-inset-right,0px));
+  --band:clamp(64px,8.5vw,112px);--r:12px;--row-h:600px;
+  color-scheme:light;
+}
+@media (min-width:768px){:root{--gut:max(40px,env(safe-area-inset-left,0px));--gut-r:max(40px,env(safe-area-inset-right,0px))}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-kr);font-size:var(--s-body);line-height:1.7;
+  -webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word;letter-spacing:-.015em}
+h1,h2,h3,p,figure,dl,dd,ol,ul{margin:0}
+ol,ul{padding:0;list-style:none}
+h1,h2,h3{text-wrap:balance}
+p,figcaption,dd{text-wrap:pretty}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+.ink :focus-visible{outline-color:var(--on-ink)}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:10px 16px;z-index:50}
+.skip:focus{left:var(--gut);top:8px}
+.wrap{max-width:1200px;margin-inline:auto;padding-left:var(--gut);padding-right:var(--gut-r)}
+.num,.date{font-family:var(--f-num);font-variant-numeric:tabular-nums}
+
+/* 맨 위 줄 */
+.top{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:56px}
+.back{font-weight:700;font-size:15px;text-decoration:none;padding:8px 0;white-space:nowrap}
+.pj{display:flex;align-items:center;gap:2px}
+.pj a{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 4px;
+  font-family:var(--f-num);font-weight:700;font-size:13px;letter-spacing:.02em;color:var(--muted);text-decoration:none;border-radius:999px}
+.pj a[aria-current="page"]{color:var(--paper);background:var(--accent-ink)}
+@media (hover:hover) and (pointer:fine){ .back:hover{color:var(--accent-ink)} .pj a:not([aria-current]):hover{color:var(--ink);background:var(--mist)} }
+
+/* 표지 */
+.cover{padding-block:clamp(36px,6vw,80px) clamp(48px,6vw,80px)}
+.kicker{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
+.kicker .idx{font-family:var(--f-num);font-weight:700;font-size:13px;letter-spacing:.06em;color:var(--muted)}
+.status{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:var(--accent-soft);
+  color:var(--accent-ink);font-size:13.5px;font-weight:700;line-height:1.3}
+.status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none}
+.title{margin-top:18px;font-size:var(--s-title);font-weight:900;line-height:1.05;letter-spacing:-.045em}
+.title .en{font-family:var(--f-num);font-weight:700;font-size:.4em;letter-spacing:-.01em;color:var(--muted);margin-left:.35em;vertical-align:.22em;white-space:nowrap}
+.summary{margin-top:18px;font-size:var(--s-lead);line-height:1.6;font-weight:500;max-width:30em}
+.meta{margin-top:clamp(28px,4vw,40px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1.5px solid var(--ink)}
+.meta div{padding:14px 18px 0 0;min-width:0}
+.meta div+div{padding-left:18px;border-left:1px solid var(--line)}
+.meta dt{font-size:var(--s-cap);color:var(--muted);font-weight:500}
+.meta dd{margin-top:4px;font-size:15px;line-height:1.6}
+@media (max-width:767px){
+  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .meta div:nth-child(3){padding-left:0;border-left:0}
+  .meta div:nth-child(n+3){margin-top:14px;border-top:1px solid var(--line)}
+}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 22px;border-radius:999px;
+  font:700 15.5px/1 var(--f-kr);letter-spacing:-.01em;text-decoration:none;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper);
+  transition:transform 120ms ease-out,opacity 150ms ease}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn:active{transform:translateY(1px)}
+@media (hover:hover) and (pointer:fine){ .btn:hover{opacity:.86} }
+.cover-fig{margin-top:clamp(32px,5vw,56px)}
+.cover-fig img{width:100%;border-radius:var(--r);background:var(--mist)}
+
+/* 섹션 공통 */
+.sec{padding-block:var(--band)}
+.mist{background:var(--mist)}
+.ink{background:var(--ink);color:var(--on-ink)}
+.sec-head h2{font-size:var(--s-h2);font-weight:900;line-height:1.25;letter-spacing:-.035em}
+.sec-head p{margin-top:10px;color:var(--muted);font-size:var(--s-small);line-height:1.7;max-width:44em}
+.ink .sec-head p{color:var(--on-ink-muted)}
+
+/* 사진 줄: 같은 줄 사진은 높이를 맞추고, 줄 전체 높이는 --row-h를 넘지 않게 */
+.media{display:grid;gap:20px;min-width:0}
+.row{display:flex;gap:12px;align-items:flex-start;max-width:calc(var(--sum) * var(--row-h))}
+.row>figure{flex:calc(var(--ar) * 100) 1 0;min-width:0}
+figure img{width:100%;border-radius:10px;background:var(--mist);border:1px solid var(--line)}
+.mist figure img{border-color:#DADAD5}
+figcaption{margin-top:8px;font-size:var(--s-cap);line-height:1.55;color:var(--muted)}
+figcaption time{font-family:var(--f-num);font-weight:600;color:var(--ink);margin-right:6px;font-variant-numeric:tabular-nums}
+@media (max-width:639px){
+  .row:not(.keep){flex-direction:column;gap:18px;max-width:none}
+  .row:not(.keep)>figure{flex:none;width:100%;max-width:calc(var(--ar) * 520px)}
+  .row.keep{gap:8px;max-width:calc(var(--sum) * 440px)}
+}
+
+/* 성장 과정 */
+.stages{margin-top:clamp(32px,4vw,56px);border-top:1.5px solid var(--ink)}
+.stage{display:grid;gap:18px;padding-block:28px 40px;border-bottom:1px solid var(--line)}
+.stage:last-child{border-bottom:0;padding-bottom:0}
+.stage-date{display:block;font-family:var(--f-num);font-weight:700;font-size:15px;letter-spacing:.01em;color:var(--accent-ink);font-variant-numeric:tabular-nums}
+.stage h3{margin-top:6px;font-size:var(--s-h3);font-weight:700;line-height:1.45;letter-spacing:-.02em}
+.stage .why{margin-top:8px;font-size:15px;line-height:1.7;color:var(--text)}
+.stage .src{margin-top:8px;font-size:12.5px;line-height:1.6;color:var(--muted)}
+.ver{font-family:var(--f-num);font-weight:700}
+@media (min-width:1000px){
+  .stage{grid-template-columns:260px minmax(0,1fr);gap:48px;padding-block:36px 48px}
+  .stage-text{position:sticky;top:80px;align-self:start}
+}
+
+/* 처음과 지금 */
+.pairs{margin-top:clamp(32px,4vw,56px);display:grid;gap:clamp(48px,6vw,72px)}
+.pair h3{font-size:var(--s-h3);font-weight:700;line-height:1.45;letter-spacing:-.02em}
+.pair .what{margin-top:6px;font-size:var(--s-small);color:var(--text);max-width:42em}
+.pair .row{margin-top:20px}
+.ba{display:flex;align-items:baseline;gap:8px;margin-bottom:8px;font-size:14px;color:var(--muted)}
+.ba b{color:var(--ink);font-weight:800}
+.ba time{font-family:var(--f-num);font-weight:600}
+.after .ba b{text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:3px;text-underline-offset:5px}
+.pair .note{margin-top:12px;font-size:var(--s-cap);color:var(--muted)}
+@media (min-width:1000px){ .pairs{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:40px} .pair.wide{grid-column:1/-1} }
+
+/* 숫자 */
+.stats{margin-top:clamp(32px,4vw,48px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 24px}
+.stat{padding-top:18px;border-top:3px solid var(--accent-on-ink);display:flex;flex-direction:column;gap:8px;min-width:0}
+.stat .n{font-family:var(--f-num);font-variation-settings:"wdth" 72;font-weight:800;font-size:clamp(40px,5.2vw,66px);line-height:1;
+  letter-spacing:-.02em;color:var(--on-ink);font-variant-numeric:tabular-nums}
+.stat .n small{font-family:var(--f-kr);font-size:.36em;font-weight:700;color:var(--on-ink-muted);margin-left:4px;letter-spacing:-.01em}
+.stat .n .pre{font-family:var(--f-kr);font-size:.36em;font-weight:700;color:var(--on-ink-muted);margin-right:4px}
+.stat .lb{margin-top:4px;font-size:15px;font-weight:700;line-height:1.5}
+.stat .sub{font-size:13.5px;line-height:1.55;color:var(--on-ink-muted)}
+.stat .src{margin-top:auto;padding-top:6px;font-size:12.5px;line-height:1.55;color:var(--on-ink-muted)}
+.stat .src time{font-family:var(--f-num);color:var(--on-ink)}
+@media (max-width:899px){ .stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 16px} }
+
+/* 지금과 다음 */
+.now-grid{margin-top:clamp(32px,4vw,48px);display:grid;gap:32px;align-items:start}
+@media (min-width:900px){ .now-grid{grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px} }
+.now-list{border-top:1.5px solid var(--ink)}
+.now-list div{display:grid;grid-template-columns:56px minmax(0,1fr);gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.now-list dt{font-size:var(--s-small);color:var(--muted);font-weight:500;padding-top:1px}
+.now-list dd{font-size:16.5px;line-height:1.7}
+.links{display:flex;flex-direction:column;gap:6px}
+.links a{font-weight:700;color:var(--accent-ink);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px;overflow-wrap:anywhere}
+.links .plain{font-size:var(--s-small);color:var(--muted)}
+
+/* 다른 프로젝트 */
+.pn{padding-block:var(--band);border-top:1px solid var(--line)}
+.pn h2{font-size:var(--s-cap);font-family:var(--f-num);font-weight:700;letter-spacing:.06em;color:var(--muted)}
+.pn-grid{margin-top:20px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.pn-card{display:flex;flex-direction:column;gap:10px;text-decoration:none;color:inherit;min-width:0}
+.pn-card img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:10px;background:var(--mist);transition:opacity 200ms ease}
+.pn-k{font-size:13px;color:var(--muted);font-weight:500}
+.pn-name{font-size:clamp(18px,2.4vw,28px);font-weight:900;line-height:1.25;letter-spacing:-.03em}
+.pn-one{font-size:14px;color:var(--muted);line-height:1.5}
+.pn-card.next{text-align:right}
+.pn-all{display:inline-flex;align-items:center;min-height:46px;margin-top:36px;font-weight:700;font-size:16px;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1.5px}
+@media (hover:hover) and (pointer:fine){ .pn-card:hover img{opacity:.86} .pn-card:hover .pn-name{color:var(--accent-ink)} }
+
+.foot{border-top:1px solid var(--line);padding-block:24px 40px;font-size:var(--s-cap);color:var(--muted)}
+.foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px}
+.foot a{color:var(--ink);font-weight:700;text-decoration:none}
+
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *{transition:none!important} }
+@media print{
+  @page{size:A4;margin:14mm}
+  .top,.skip,.pn,.btns{display:none!important}
+  .sec,.cover{padding-block:8mm}
+  .stage-text{position:static}
+  .ink,.mist{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  figure,.stage-text,.pair,.stat,.now-list div,.meta{break-inside:avoid}
+  h2,h3,.stage-text{break-after:avoid}
+  img{max-height:150mm;width:auto!important;max-width:100%!important;object-fit:contain}
+}
+
+:root{--accent:#2C6963;--accent-ink:#2C6963;--accent-soft:#E4ECEB;--accent-on-ink:#A97814}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="top">
+  <div class="wrap">
+    <a class="back" href="../">← 시영욱 포트폴리오</a>
+    <nav class="pj" aria-label="프로젝트 이동"><a href="../padd/" title="꾹꾹이" aria-label="01 꾹꾹이">01</a><a href="../4fl/" title="4FL" aria-label="02 4FL">02</a><a href="../tete/" title="Two Eyes Two Ears" aria-label="03 Two Eyes Two Ears" aria-current="page">03</a><a href="../poopy/" title="똥키우기" aria-label="04 똥키우기">04</a><a href="../hokkuki/" title="호꾹이" aria-label="05 호꾹이">05</a></nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="cover" aria-labelledby="title">
+  <div class="wrap">
+    <p class="kicker"><span class="idx">프로젝트 03 / 05</span><span class="status">진행 중 · 빌드 v23</span></p>
+    <h1 class="title" id="title">Two Eyes Two Ears</h1>
+    <p class="summary">보는 할머니와 듣는 할아버지의 2인 협동 공포 게임입니다.</p>
+    <dl class="meta"><div><dt>역할</dt><dd>기획·디렉션. AI 도구(Claude, Codex)로 프로토타입 제작과 시험 지휘</dd></div><div><dt>기간</dt><dd>2026.08.26 ~ 현재</dd></div><div><dt>함께한 사람</dt><dd>개발 파트너 1명</dd></div><div><dt>도구</dt><dd>Godot, Claude, Codex, AI 이미지 도구</dd></div></dl>
+    
+    <figure class="cover-fig"><img src="img/20261121_지금의_두사람_시안A.jpg" width="1536" height="779" fetchpriority="high" decoding="async" alt="아트토이 피규어 모습의 두 사람. 휠체어에 앉아 랜턴을 든 할머니와, 귀에 손을 대고 몸을 숙인 할아버지가 줄무늬 환자복을 입고 있습니다."><figcaption><time>2026.11.21</time>지금의 두 사람입니다. 아트토이 피규어에 환자복을 입혔습니다.</figcaption></figure>
+  </div>
+</section>
+<section class="sec" id="growth" aria-labelledby="growth-h">
+  <div class="wrap">
+    <header class="sec-head"><h2 id="growth-h">자라 온 과정</h2><p>눈은 보이지만 귀가 먹먹한 할머니와, 귀는 밝지만 눈이 흐린 할아버지가 보이스챗만으로 정전된 정신요양병원을 빠져나가는 게임입니다. 콘셉트와 캐릭터 시안은 AI 이미지 도구로 만들었고, 빌드 화면은 Godot로 만든 게임에서 찍었습니다.</p></header>
+    <ol class="stages">
+      <li class="stage">
+        <div class="stage-text"><time class="stage-date">2026.08.26 ~ 08.31</time><h3>기획개요와 첫 키샷</h3><p class="why">기획개요를 쓰고, 두 사람이 병원 복도를 지나는 첫 키샷을 만들었습니다.</p></div>
+        <div class="media"><div class="row" style="--sum:1.790"><figure style="--ar:1.790"><img src="img/20260831_처음모습_키샷.jpg" width="1024" height="572" loading="lazy" decoding="async" alt="처음 키샷. 붉은 비상등이 켜진 낡은 병원 복도에서 할아버지가 랜턴을 든 할머니의 휠체어를 밀고 있습니다."><figcaption><time>2026.08.31</time>처음 모습입니다. 이때는 서양풍 토이 캐릭터였습니다.</figcaption></figure></div></div>
+      </li>
+      <li class="stage">
+        <div class="stage-text"><time class="stage-date">2026.08.31 ~ 09.10</time><h3>할아버지 화면을 ‘2m만 선명하게’로 바꿨습니다</h3><p class="why">전부 흐린 화면은 눈이 피로하고 얻는 정보가 없어서, 할머니 없이 가는 편이 더 빨랐습니다.</p></div>
+        <div class="media"><div class="row" style="--sum:3.580"><figure style="--ar:1.790"><img src="img/20260831_할아버지시야_흐림_폐기안.jpg" width="1024" height="572" loading="lazy" decoding="async" alt="폐기안. 휠체어를 미는 할아버지 시점 화면 전체가 하얗게 흐려 앞이 거의 보이지 않습니다."><figcaption><time>2026.08.31</time>폐기안입니다. 화면 전체가 흐립니다.</figcaption></figure><figure style="--ar:1.790"><img src="img/20260901_할아버지시야_2m_채택안.jpg" width="1024" height="572" loading="lazy" decoding="async" alt="채택안. 할아버지 시점에서 휠체어와 할머니 뒷모습 주변 반경만 선명하고 바깥은 검은색입니다."><figcaption><time>2026.09.01</time>채택안입니다. 반경 2m만 선명하고 그 밖은 검은색입니다.</figcaption></figure></div></div>
+      </li>
+      <li class="stage">
+        <div class="stage-text"><time class="stage-date">2026.11.13</time><h3>회색 상자 프로토 <span class="ver">v2.0</span></h3><p class="why">아트 없이 회색 상자로, 두 사람의 화면 규칙부터 시험했습니다.</p></div>
+        <div class="media"><div class="row" style="--sum:3.556"><figure style="--ar:1.778"><img src="img/20261113_회색상자_할아버지화면.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="회색 상자 프로토의 할아버지 화면. 거의 검은 화면 아래쪽에 가까운 물체 하나만 보입니다."><figcaption><time>2026.11.13</time>할아버지 화면입니다. 코앞만 보입니다.</figcaption></figure><figure style="--ar:1.778"><img src="img/20261113_회색상자_안내판기호.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="회색 상자 프로토에서 할아버지가 본 안내판. 글자 대신 물음표와 별표 기호가 적혀 있습니다."><figcaption><time>2026.11.13</time>할아버지에게는 안내판 글자가 기호로 보입니다.</figcaption></figure></div></div>
+      </li>
+      <li class="stage">
+        <div class="stage-text"><time class="stage-date">2026.11.18 ~ 11.19</time><h3>봉제인형 캐릭터</h3><p class="why">캐릭터를 한국 할머니와 할아버지로 바꾸고, 봉제인형 3D 모델을 만들었습니다.</p></div>
+        <div class="media"><div class="row" style="--sum:2.358"><figure style="--ar:1.358"><img src="img/20261119_봉제인형_6안.jpg" width="1480" height="1090" loading="lazy" decoding="async" alt="캐릭터 6안 비교표. 말랑 봉제인형, 장난감 피규어, 젤리빈, 동글 피규어, 공포용 천인형 등 여섯 가지 모습입니다."><figcaption><time>2026.11.19</time>더 귀엽게 6안을 비교해 1안 봉제인형을 골랐습니다.</figcaption></figure><figure style="--ar:1.000"><img src="img/20261119_봉제인형_3D.jpg" width="900" height="900" loading="lazy" decoding="async" alt="3D로 만든 봉제인형 캐릭터. 휠체어에 앉아 랜턴을 든 할머니 뒤에서 벙거지 모자를 쓴 할아버지가 휠체어를 밉니다."><figcaption><time>2026.11.19</time>3D로 만든 봉제인형 할머니와 할아버지입니다.</figcaption></figure></div></div>
+      </li>
+      <li class="stage">
+        <div class="stage-text"><time class="stage-date">2026.11.20</time><h3>전체 층, 12스테이지로 판을 넓혔습니다</h3><p class="why">지상 10층과 지하 2층입니다.</p></div>
+        <div class="media"><div class="row" style="--sum:2.372"><figure style="--ar:2.372"><img src="img/20261120_전체층_빌드화면.jpg" width="1376" height="580" loading="lazy" decoding="async" alt="빌드 화면 여섯 칸. 10층 수면병동 병실열, 9층 보호자 대기석, 7층 당직 휴게실, 6층 식판 회수대, 4층 수치료 병실열, 3층 직원 휴게실을 할머니의 랜턴 시점으로 보여 줍니다."><figcaption><time>2026.11.20</time>10층부터 3층까지, 층마다 다른 병동을 만들었습니다.</figcaption></figure></div></div>
+      </li>
+      <li class="stage">
+        <div class="stage-text"><time class="stage-date">2026.11.21 ~ 11.22</time><h3>아트토이 피규어와 환자복</h3><p class="why">화풍을 아트토이 피규어로 바꾸고, 두 사람에게 환자복을 입혔습니다.</p></div>
+        <div class="media"><div class="row" style="--sum:2.415"><figure style="--ar:1.415"><img src="img/20261121_새화풍_4안_D선택.jpg" width="1600" height="1131" loading="lazy" decoding="async" alt="새 화풍 4안. A 클레이, B 어두운 동화풍 인형, C 스타일라이즈드 3D 애니, D 아트토이 비닐 피규어로 그린 할머니와 할아버지가 젖은 병원 복도에 있습니다."><figcaption><time>2026.11.21</time>새 화풍 4안 중 D 아트토이 비닐 피규어를 골랐습니다.</figcaption></figure><figure style="--ar:1.000"><img src="img/20261122_3D모델_앞뒤.jpg" width="1000" height="1000" loading="lazy" decoding="async" alt="3D 모델 확인 화면. 할머니의 앞과 뒤, 할아버지의 양옆 모습을 회색 배경에서 보여 줍니다."><figcaption><time>2026.11.22</time>그림을 3D 모델로 옮겨 앞뒤를 확인했습니다.</figcaption></figure></div></div>
+      </li>
+      <li class="stage">
+        <div class="stage-text"><time class="stage-date">2026.11.24</time><h3><span class="ver">v22</span> 플레이 영상</h3><p class="why">두 사람의 화면을 함께 담은 플레이 영상을 만들었습니다.</p></div>
+        <div class="media"><div class="row" style="--sum:1.778"><figure style="--ar:1.778"><img src="img/20261124_v22영상_승강기.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="플레이 영상 장면. 승강기 안에서 할아버지 시점으로 앞에 앉은 할머니의 머리가 보이고, 오른쪽 아래 작은 창에 할머니 시점이 함께 나옵니다."><figcaption><time>2026.11.24</time>승강기 안입니다. 큰 화면은 할아버지, 오른쪽 아래는 할머니 화면입니다.</figcaption></figure></div></div>
+      </li>
+      <li class="stage">
+        <div class="stage-text"><time class="stage-date">2026.11.25</time><h3><span class="ver">v23</span> 게임 안 문장 306행을 원문과 맞췄습니다</h3><p class="why">새 상태 검사 70개를 모두 통과했습니다.</p></div>
+        <div class="media"><div class="row" style="--sum:3.522"><figure style="--ar:1.761"><img src="img/20261125_v23_안내판_할머니화면.jpg" width="634" height="360" loading="lazy" decoding="async" alt="할머니 화면. 벽의 안내판에 3층 기록병동이라는 글자가 보입니다."><figcaption><time>2026.11.25</time>할머니 화면입니다. 안내판 글자가 보입니다.</figcaption></figure><figure style="--ar:1.761"><img src="img/20261125_v23_안내판_할아버지화면.jpg" width="634" height="360" loading="lazy" decoding="async" alt="할아버지 화면. 같은 안내판의 글자가 번진 점과 기호로 보입니다."><figcaption><time>2026.11.25</time>할아버지 화면입니다. 같은 안내판이 번진 기호로 보입니다.</figcaption></figure></div></div>
+      </li>
+    </ol>
+  </div>
+</section>
+<section class="sec mist" id="compare" aria-labelledby="compare-h">
+  <div class="wrap">
+    <header class="sec-head"><h2 id="compare-h">처음과 지금</h2></header>
+    <div class="pairs">
+      <article class="pair wide"><h3>캐릭터</h3><p class="what">실사, 토이, 치비, 봉제 시안을 거쳐 아트토이 피규어로 정했습니다.</p><div class="row" style="--sum:2.626"><figure class="before" style="--ar:0.938"><p class="ba"><b>전</b><time>2026.11.18 ~ 11.19</time></p><img src="img/20261119_캐릭터시안들_전.jpg" width="1208" height="1288" loading="lazy" decoding="async" alt="이전 캐릭터 시안 네 장. 실사, 귀여운 토이, 치비, 봉제인형 모습의 할머니와 할아버지입니다."></figure><figure class="after" style="--ar:1.688"><p class="ba"><b>지금</b><time>2026.11.21</time></p><img src="img/20261121_아트토이_정면_후.jpg" width="1600" height="948" loading="lazy" decoding="async" alt="지금 캐릭터의 정면 그림. 자두색 가디건의 할머니와, 머스터드색 비니와 흰 수염의 할아버지가 줄무늬 환자복을 입고 있습니다."></figure></div></article>
+      <article class="pair wide"><h3>할머니 화면</h3><p class="what">회색 상자 방에서 10층 병실 복도가 됐습니다. 오른쪽 아래 작은 창은 할아버지 화면입니다.</p><div class="row" style="--sum:3.556"><figure class="before" style="--ar:1.778"><p class="ba"><b>전</b><time>2026.11.13</time></p><img src="img/20261113_회색상자_할머니화면_전.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="회색 상자 프로토의 할머니 화면. 회색 벽과 상자, 정면 벽의 노란 번호판만 있습니다."></figure><figure class="after" style="--ar:1.778"><p class="ba"><b>지금</b><time>2026.11.24</time></p><img src="img/20261124_v22영상_할머니화면_후.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="지금의 할머니 화면. 랜턴을 든 손 너머로 10층 병실 복도와 야간 간호대가 보이고, 오른쪽 아래 작은 창에 할아버지 시점이 나옵니다."></figure></div></article>
+    </div>
+  </div>
+</section>
+<section class="sec ink" id="numbers" aria-labelledby="numbers-h">
+  <div class="wrap">
+    <header class="sec-head"><h2 id="numbers-h">숫자</h2><p>설계 문서와 빌드 변경 기록에서 읽은 값입니다.</p></header>
+    <ul class="stats">
+      <li class="stat"><p class="n">12</p><p class="lb">스테이지</p><p class="sub">지상 10층, 지하 2층</p><p class="src">기준 <time>2026.11.25</time><br>출처 전체 층 설계 문서</p></li>
+      <li class="stat"><p class="n">12</p><p class="lb">크리처</p><p class="sub">층마다 다른 위협</p><p class="src">기준 <time>2026.11.25</time><br>출처 크리처 시트</p></li>
+      <li class="stat"><p class="n">306</p><p class="lb">게임 안 문장</p><p class="sub">원문과 게임 데이터 일치</p><p class="src">기준 <time>2026.11.25</time><br>출처 v23 변경 기록</p></li>
+      <li class="stat"><p class="n">70<small>/70</small></p><p class="lb">v23 새 상태 검사 통과</p><p class="sub">자동 시험</p><p class="src">기준 <time>2026.11.25</time><br>출처 v23 변경 기록</p></li>
+    </ul>
+  </div>
+</section>
+<section class="sec" id="now" aria-labelledby="now-h">
+  <div class="wrap">
+    <header class="sec-head"><h2 id="now-h">지금과 다음</h2></header>
+    <div class="now-grid">
+      <div class="row" style="--sum:1.111"><figure style="--ar:1.111"><img src="img/20261122_지금_병동의_두사람.jpg" width="771" height="694" loading="lazy" decoding="async" alt="게임 속 10층 병동. 휠체어에 앉아 랜턴을 든 할머니와 그 옆에 선 할아버지가 환자복 차림으로 정면을 봅니다."><figcaption><time>2026.11.22</time>게임 속 10층 병동의 두 사람입니다.</figcaption></figure></div>
+      <dl class="now-list"><div><dt>지금</dt><dd>빌드 v23까지 만들었고, 2인 네트워크 자동 시험을 통과했습니다.</dd></div><div><dt>다음</dt><dd>v24에서 층마다 다른 병동 근무자와 소리 단서를 붙이고 있습니다.</dd></div><div><dt>링크</dt><dd><p class="links"><span class="plain">공개한 영상, 빌드, 저장소는 아직 없습니다.</span></p></dd></div></dl>
+    </div>
+  </div>
+</section>
+
+<nav class="pn" aria-labelledby="pn-h">
+  <div class="wrap">
+    <h2 id="pn-h">다른 프로젝트</h2>
+    <div class="pn-grid">
+      <a class="pn-card prev" href="../4fl/"><img src="../4fl/img/20260627_시즌2_단체사진.jpg" width="1600" height="1067" loading="lazy" decoding="async" alt=""><span class="pn-k">← 이전 · 02</span><span class="pn-name">4FL</span><span class="pn-one">오프라인 모임 플랫폼</span></a>
+      <a class="pn-card next" href="../poopy/"><img src="../poopy/img/20260820_커버_키아트.jpg" width="1600" height="900" loading="lazy" decoding="async" alt=""><span class="pn-k">다음 · 04 →</span><span class="pn-name">똥키우기</span><span class="pn-one">웹 육성 게임</span></a>
+    </div>
+    <a class="pn-all" href="../">← 시영욱 포트폴리오 · 모든 작업 보기</a>
+  </div>
+</nav>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>사진과 숫자는 2026.11.25 기준입니다.</p>
+    <p>© 2026 시영욱</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>4FL · 시영욱 포트폴리오</title>
+<meta name="description" content="4FL(For Fun Life)이 로테이션 소개팅에서 테니스 두 시즌을 거쳐 클럽 오너 플랫폼이 되기까지를 사진으로 보여 줍니다.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="4FL · 시영욱 포트폴리오">
+<meta property="og:description" content="테마는 자유, 재미는 필수인 오프라인 모임 플랫폼입니다.">
+<meta property="og:url" content="https://062-sibi.github.io/4fl/">
+<meta property="og:image" content="https://062-sibi.github.io/4fl/img/20260627_%EC%8B%9C%EC%A6%8C2_%EB%8B%A8%EC%B2%B4%EC%82%AC%EC%A7%84.jpg">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&amp;family=Noto+Sans+KR:wght@400;500;700;900&amp;display=swap">
+<style>
+:root{
+  --ink:#111111;--paper:#FFFFFF;--mist:#F4F4F2;--line:#E2E2DE;--muted:#5F5F5A;--text:#3A3A36;
+  --on-ink:#F4F4F2;--on-ink-muted:#A6A6A0;--line-ink:#2C2C2A;
+  --f-kr:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --f-num:"Archivo","Noto Sans KR","Apple SD Gothic Neo","Helvetica Neue",Arial,sans-serif;
+  --s-title:clamp(44px,7.4vw,92px);--s-h2:clamp(28px,4.2vw,48px);--s-h3:clamp(19px,2vw,23px);
+  --s-lead:clamp(18px,1.7vw,22px);--s-body:16.5px;--s-small:15px;--s-cap:13px;
+  --gut:max(16px,env(safe-area-inset-left,0px));--gut-r:max(16px,env(safe-area-inset-right,0px));
+  --band:clamp(64px,8.5vw,112px);--r:12px;--row-h:600px;
+  color-scheme:light;
+}
+@media (min-width:768px){:root{--gut:max(40px,env(safe-area-inset-left,0px));--gut-r:max(40px,env(safe-area-inset-right,0px))}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-kr);font-size:var(--s-body);line-height:1.7;
+  -webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word;letter-spacing:-.015em}
+h1,h2,h3,p,figure,dl,dd,ol,ul{margin:0}
+ol,ul{padding:0;list-style:none}
+h1,h2,h3{text-wrap:balance}
+p,figcaption,dd{text-wrap:pretty}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+.ink :focus-visible{outline-color:var(--on-ink)}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:10px 16px;z-index:50}
+.skip:focus{left:var(--gut);top:8px}
+.wrap{max-width:1200px;margin-inline:auto;padding-left:var(--gut);padding-right:var(--gut-r)}
+.num,.date{font-family:var(--f-num);font-variant-numeric:tabular-nums}
+
+/* 맨 위 줄 */
+.top{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;height:56px}
+.back{font-weight:700;font-size:15px;text-decoration:none;padding:8px 0;white-space:nowrap}
+.pj{display:flex;align-items:center;gap:2px}
+.pj a{display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:34px;padding:0 4px;
+  font-family:var(--f-num);font-weight:700;font-size:13px;letter-spacing:.02em;color:var(--muted);text-decoration:none;border-radius:999px}
+.pj a[aria-current="page"]{color:var(--paper);background:var(--accent-ink)}
+@media (hover:hover) and (pointer:fine){ .back:hover{color:var(--accent-ink)} .pj a:not([aria-current]):hover{color:var(--ink);background:var(--mist)} }
+
+/* 표지 */
+.cover{padding-block:clamp(36px,6vw,80px) clamp(48px,6vw,80px)}
+.kicker{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
+.kicker .idx{font-family:var(--f-num);font-weight:700;font-size:13px;letter-spacing:.06em;color:var(--muted)}
+.status{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:var(--accent-soft);
+  color:var(--accent-ink);font-size:13.5px;font-weight:700;line-height:1.3}
+.status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none}
+.title{margin-top:18px;font-size:var(--s-title);font-weight:900;line-height:1.05;letter-spacing:-.045em}
+.title .en{font-family:var(--f-num);font-weight:700;font-size:.4em;letter-spacing:-.01em;color:var(--muted);margin-left:.35em;vertical-align:.22em;white-space:nowrap}
+.summary{margin-top:18px;font-size:var(--s-lead);line-height:1.6;font-weight:500;max-width:30em}
+.meta{margin-top:clamp(28px,4vw,40px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1.5px solid var(--ink)}
+.meta div{padding:14px 18px 0 0;min-width:0}
+.meta div+div{padding-left:18px;border-left:1px solid var(--line)}
+.meta dt{font-size:var(--s-cap);color:var(--muted);font-weight:500}
+.meta dd{margin-top:4px;font-size:15px;line-height:1.6}
+@media (max-width:767px){
+  .meta{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .meta div:nth-child(3){padding-left:0;border-left:0}
+  .meta div:nth-child(n+3){margin-top:14px;border-top:1px solid var(--line)}
+}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 22px;border-radius:999px;
+  font:700 15.5px/1 var(--f-kr);letter-spacing:-.01em;text-decoration:none;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper);
+  transition:transform 120ms ease-out,opacity 150ms ease}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn:active{transform:translateY(1px)}
+@media (hover:hover) and (pointer:fine){ .btn:hover{opacity:.86} }
+.cover-fig{margin-top:clamp(32px,5vw,56px)}
+.cover-fig img{width:100%;border-radius:var(--r);background:var(--mist)}
+
+/* 섹션 공통 */
+.sec{padding-block:var(--band)}
+.mist{background:var(--mist)}
+.ink{background:var(--ink);color:var(--on-ink)}
+.sec-head h2{font-size:var(--s-h2);font-weight:900;line-height:1.25;letter-spacing:-.035em}
+.sec-head p{margin-top:10px;color:var(--muted);font-size:var(--s-small);line-height:1.7;max-width:44em}
+.ink .sec-head p{color:var(--on-ink-muted)}
+
+/* 사진 줄: 같은 줄 사진은 높이를 맞추고, 줄 전체 높이는 --row-h를 넘지 않게 */
+.media{display:grid;gap:20px;min-width:0}
+.row{display:flex;gap:12px;align-items:flex-start;max-width:calc(var(--sum) * var(--row-h))}
+.row>figure{flex:calc(var(--ar) * 100) 1 0;min-width:0}
+figure img{width:100%;border-radius:10px;background:var(--mist);border:1px solid var(--line)}
+.mist figure img{border-color:#DADAD5}
+figcaption{margin-top:8px;font-size:var(--s-cap);line-height:1.55;color:var(--muted)}
+figcaption time{font-family:var(--f-num);font-weight:600;color:var(--ink);margin-right:6px;font-variant-numeric:tabular-nums}
+@media (max-width:639px){
+  .row:not(.keep){flex-direction:column;gap:18px;max-width:none}
+  .row:not(.keep)>figure{flex:none;width:100%;max-width:calc(var(--ar) * 520px)}
+  .row.keep{gap:8px;max-width:calc(var(--sum) * 440px)}
+}
+
+/* 성장 과정 */
+.stages{margin-top:clamp(32px,4vw,56px);border-top:1.5px solid var(--ink)}
+.stage{display:grid;gap:18px;padding-block:28px 40px;border-bottom:1px solid var(--line)}
+.stage:last-child{border-bottom:0;padding-bottom:0}
+.stage-date{display:block;font-family:var(--f-num);font-weight:700;font-size:15px;letter-spacing:.01em;color:var(--accent-ink);font-variant-numeric:tabular-nums}
+.stage h3{margin-top:6px;font-size:var(--s-h3);font-weight:700;line-height:1.45;letter-spacing:-.02em}
+.stage .why{margin-top:8px;font-size:15px;line-height:1.7;color:var(--text)}
+.stage .src{margin-top:8px;font-size:12.5px;line-height:1.6;color:var(--muted)}
+.ver{font-family:var(--f-num);font-weight:700}
+@media (min-width:1000px){
+  .stage{grid-template-columns:260px minmax(0,1fr);gap:48px;padding-block:36px 48px}
+  .stage-text{position:sticky;top:80px;align-self:start}
+}
+
+/* 처음과 지금 */
+.pairs{margin-top:clamp(32px,4vw,56px);display:grid;gap:clamp(48px,6vw,72px)}
+.pair h3{font-size:var(--s-h3);font-weight:700;line-height:1.45;letter-spacing:-.02em}
+.pair .what{margin-top:6px;font-size:var(--s-small);color:var(--text);max-width:42em}
+.pair .row{margin-top:20px}
+.ba{display:flex;align-items:baseline;gap:8px;margin-bottom:8px;font-size:14px;color:var(--muted)}
+.ba b{color:var(--ink);font-weight:800}
+.ba time{font-family:var(--f-num);font-weight:600}
+.after .ba b{text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:3px;text-underline-offset:5px}
+.pair .note{margin-top:12px;font-size:var(--s-cap);color:var(--muted)}
+@media (min-width:1000px){ .pairs{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:40px} .pair.wide{grid-column:1/-1} }
+
+/* 숫자 */
+.stats{margin-top:clamp(32px,4vw,48px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 24px}
+.stat{padding-top:18px;border-top:3px solid var(--accent-on-ink);display:flex;flex-direction:column;gap:8px;min-width:0}
+.stat .n{font-family:var(--f-num);font-variation-settings:"wdth" 72;font-weight:800;font-size:clamp(40px,5.2vw,66px);line-height:1;
+  letter-spacing:-.02em;color:var(--on-ink);font-variant-numeric:tabular-nums}
+.stat .n small{font-family:var(--f-kr);font-size:.36em;font-weight:700;color:var(--on-ink-muted);margin-left:4px;letter-spacing:-.01em}
+.stat .n .pre{font-family:var(--f-kr);font-size:.36em;font-weight:700;color:var(--on-ink-muted);margin-right:4px}
+.stat .lb{margin-top:4px;font-size:15px;font-weight:700;line-height:1.5}
+.stat .sub{font-size:13.5px;line-height:1.55;color:var(--on-ink-muted)}
+.stat .src{margin-top:auto;padding-top:6px;font-size:12.5px;line-height:1.55;color:var(--on-ink-muted)}
+.stat .src time{font-family:var(--f-num);color:var(--on-ink)}
+@media (max-width:899px){ .stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 16px} }
+
+/* 지금과 다음 */
+.now-grid{margin-top:clamp(32px,4vw,48px);display:grid;gap:32px;align-items:start}
+@media (min-width:900px){ .now-grid{grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:56px} }
+.now-list{border-top:1.5px solid var(--ink)}
+.now-list div{display:grid;grid-template-columns:56px minmax(0,1fr);gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.now-list dt{font-size:var(--s-small);color:var(--muted);font-weight:500;padding-top:1px}
+.now-list dd{font-size:16.5px;line-height:1.7}
+.links{display:flex;flex-direction:column;gap:6px}
+.links a{font-weight:700;color:var(--accent-ink);text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px;overflow-wrap:anywhere}
+.links .plain{font-size:var(--s-small);color:var(--muted)}
+
+/* 다른 프로젝트 */
+.pn{padding-block:var(--band);border-top:1px solid var(--line)}
+.pn h2{font-size:var(--s-cap);font-family:var(--f-num);font-weight:700;letter-spacing:.06em;color:var(--muted)}
+.pn-grid{margin-top:20px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.pn-card{display:flex;flex-direction:column;gap:10px;text-decoration:none;color:inherit;min-width:0}
+.pn-card img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:10px;background:var(--mist);transition:opacity 200ms ease}
+.pn-k{font-size:13px;color:var(--muted);font-weight:500}
+.pn-name{font-size:clamp(18px,2.4vw,28px);font-weight:900;line-height:1.25;letter-spacing:-.03em}
+.pn-one{font-size:14px;color:var(--muted);line-height:1.5}
+.pn-card.next{text-align:right}
+.pn-all{display:inline-flex;align-items:center;min-height:46px;margin-top:36px;font-weight:700;font-size:16px;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1.5px}
+@media (hover:hover) and (pointer:fine){ .pn-card:hover img{opacity:.86} .pn-card:hover .pn-name{color:var(--accent-ink)} }
+
+.foot{border-top:1px solid var(--line);padding-block:24px 40px;font-size:var(--s-cap);color:var(--muted)}
+.foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px}
+.foot a{color:var(--ink);font-weight:700;text-decoration:none}
+
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *{transition:none!important} }
+@media print{
+  @page{size:A4;margin:14mm}
+  .top,.skip,.pn,.btns{display:none!important}
+  .sec,.cover{padding-block:8mm}
+  .stage-text{position:static}
+  .ink,.mist{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  figure,.stage-text,.pair,.stat,.now-list div,.meta{break-inside:avoid}
+  h2,h3,.stage-text{break-after:avoid}
+  img{max-height:150mm;width:auto!important;max-width:100%!important;object-fit:contain}
+}
+
+:root{--accent:#FF5A3C;--accent-ink:#C2361B;--accent-soft:#FFEAE6;--accent-on-ink:#FF5A3C}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="top">
+  <div class="wrap">
+    <a class="back" href="../">← 시영욱 포트폴리오</a>
+    <nav class="pj" aria-label="프로젝트 이동"><a href="../padd/" title="꾹꾹이" aria-label="01 꾹꾹이">01</a><a href="../4fl/" title="4FL" aria-label="02 4FL" aria-current="page">02</a><a href="../tete/" title="Two Eyes Two Ears" aria-label="03 Two Eyes Two Ears">03</a><a href="../poopy/" title="똥키우기" aria-label="04 똥키우기">04</a><a href="../hokkuki/" title="호꾹이" aria-label="05 호꾹이">05</a></nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="cover" aria-labelledby="title">
+  <div class="wrap">
+    <p class="kicker"><span class="idx">프로젝트 02 / 05</span><span class="status">운영 중</span></p>
+    <h1 class="title" id="title">4FL <span class="en">For Fun Life</span></h1>
+    <p class="summary">테마는 자유, 재미는 필수인 오프라인 모임 플랫폼입니다.</p>
+    <dl class="meta"><div><dt>역할</dt><dd>대표. 기획, 협찬 영업, 홍보 소재 제작, 운영 총괄</dd></div><div><dt>기간</dt><dd>2024.10 ~ 현재</dd></div><div><dt>함께한 사람</dt><dd>운영진 2명</dd></div><div><dt>도구</dt><dd>인스타그램 릴스와 카드, 참가자 설문</dd></div></dl>
+    <div class="btns"><a class="btn" href="https://www.instagram.com/4fl_wave/" target="_blank" rel="noopener">인스타그램 @4fl_wave ↗</a></div>
+    <figure class="cover-fig"><img src="img/20260627_시즌2_단체사진.jpg" width="1600" height="1067" fetchpriority="high" decoding="async" alt="테니스 코트 네트 앞에 라켓을 든 참가자 20여 명이 모여 찍은 시즌2 단체 사진"><figcaption><time>2026.06.27</time>시즌2 DOUBLE UP 단체 사진</figcaption></figure>
+  </div>
+</section>
+<section class="sec" id="growth" aria-labelledby="growth-h">
+  <div class="wrap">
+    <header class="sec-head"><h2 id="growth-h">자라 온 과정</h2><p>로테이션 소개팅과 문화교류 파티를 거쳐 테니스 두 시즌, 그리고 클럽 오너 플랫폼까지 왔습니다.</p></header>
+    <ol class="stages">
+      <li class="stage">
+        <div class="stage-text"><time class="stage-date">2025.03.31</time><h3>싱글벙글, 9:9 로테이션 소개팅을 열었습니다</h3></div>
+        <div class="media"><div class="row" style="--sum:0.800"><figure style="--ar:0.800"><img src="img/20250331_싱글벙글_포스터.jpg" width="1080" height="1350" loading="lazy" decoding="async" alt="불꽃 하트 위에 로테이션 소개팅 싱글벙글, 9:9, 25.03.31이라고 적힌 포스터"><figcaption><time>2025.03.31</time>싱글벙글 포스터</figcaption></figure></div></div>
+      </li>
+      <li class="stage">
+        <div class="stage-text"><time class="stage-date">2025.05</time><h3>소서울, 루프탑에서 문화교류 파티를 열었습니다</h3></div>
+        <div class="media"><div class="row" style="--sum:0.750"><figure style="--ar:0.750"><img src="img/202505_소서울_루프탑파티.jpg" width="960" height="1280" loading="lazy" decoding="async" alt="조명과 붉은 리본이 걸린 루프탑에서 참가자들이 테이블에 앉아 팔을 들고 있는 모습"><figcaption><time>2025.05</time>루프탑 문화교류 파티</figcaption></figure></div></div>
+      </li>
+      <li class="stage">
+        <div class="stage-text"><time class="stage-date">2026.04.04 ~ 04.05</time><h3>테니스로 도망가자 시즌1</h3><p class="why">파티에서 1박 2일 테니스 여행으로 형식을 바꿨습니다. 확정 신청 20건, 협찬은 나이키와 랩노쉬였습니다.</p><p class="why">처음 보낸 협찬 메일 50통 가까이 답이 없어, 받는 사람을 브랜드 마케팅 담당자로 바꿨습니다.</p></div>
+        <div class="media"><div class="row" style="--sum:1.500"><figure style="--ar:1.500"><img src="img/20260404_시즌1_단체사진.jpg" width="1600" height="1067" loading="lazy" decoding="async" alt="이른 봄 나무 아래 테니스 코트에서 음료병과 라켓을 든 참가자들이 모인 시즌1 단체 사진"><figcaption><time>2026.04.04</time>시즌1 단체 사진</figcaption></figure></div><div class="row" style="--sum:2.166"><figure style="--ar:0.667"><img src="img/20260404_시즌1_벚꽃코트.jpg" width="1067" height="1600" loading="lazy" decoding="async" alt="벚꽃이 핀 나무 아래 코트 끝에서 한 참가자가 공을 기다리는 모습"><figcaption><time>2026.04.04</time>벚꽃이 핀 코트</figcaption></figure><figure style="--ar:1.500"><img src="img/20260404_시즌1_코트전경.jpg" width="1600" height="1067" loading="lazy" decoding="async" alt="소나무로 둘러싸인 클레이 코트에서 참가자들이 공을 치는 전경"><figcaption><time>2026.04.04</time>시즌1 첫날 코트</figcaption></figure></div></div>
+      </li>
+      <li class="stage">
+        <div class="stage-text"><time class="stage-date">2026.06.27 ~ 06.28</time><h3>시즌2 DOUBLE UP</h3><p class="why">실력별 3개 분반과 감독 단체레슨, 청백전을 넣었습니다. 확정 21명, 협찬 6곳이 함께해 두 시즌 협찬은 8곳이 됐습니다.</p><p class="why">끝난 뒤 피드백 11건을 ‘밸런스는 설계한다’, ‘안내가 곧 경험이다’ 같은 운영 원칙으로 정리했습니다.</p></div>
+        <div class="media"><div class="row" style="--sum:1.500"><figure style="--ar:1.500"><img src="img/20260627_시즌2_감독단체레슨.jpg" width="1600" height="1067" loading="lazy" decoding="async" alt="실내 코트에서 감독이 서브 동작을 보여 주고 참가자들이 둘러서서 보는 모습, 얼굴은 흐리게 처리"><figcaption><time>2026.06.27</time>감독 단체레슨. 얼굴은 흐리게 처리했습니다.</figcaption></figure></div><div class="row" style="--sum:2.999"><figure style="--ar:1.500"><img src="img/20260627_시즌2_협찬_마코르.jpg" width="1600" height="1067" loading="lazy" decoding="async" alt="클레이 코트 위 라켓에 놓인 그립 강화제 두 통"><figcaption><time>2026.06.27</time>협찬 제품 촬영, 마코르</figcaption></figure><figure style="--ar:1.500"><img src="img/20260627_시즌2_협찬_선쉐이드.jpg" width="1600" height="1067" loading="lazy" decoding="async" alt="클레이 코트 위 라켓에 놓인 선쉐이드 스틱 세 개"><figcaption><time>2026.06.27</time>협찬 제품 촬영, 선쉐이드</figcaption></figure></div></div>
+      </li>
+      <li class="stage">
+        <div class="stage-text"><time class="stage-date">2026.08.19 ~ 08.25</time><h3>클럽 오너 플랫폼으로 넓혔습니다</h3><p class="why">클럽 오너가 테마를 정해 모임을 엽니다. 08.25에 홍보 소재의 강조색을 라임에서 코랄로 바꿨습니다.</p></div>
+        <div class="media"><div class="row" style="--sum:0.800"><figure style="--ar:0.800"><img src="img/20260825_테마는자유_카드.png" width="1080" height="1350" loading="lazy" decoding="async" alt="테마는 자유 재미는 필수 아래에 테니스 여행, 로테이션 소개팅, 문화교류 파티 세 가지가 적힌 카드"><figcaption><time>2026.08.25</time>코랄로 바꾼 소개 카드</figcaption></figure></div></div>
+      </li>
+      <li class="stage">
+        <div class="stage-text"><time class="stage-date">2026.08.30</time><h3>클럽 오너 모집 릴스를 발행했습니다</h3><p class="why">모집 릴스를 13번째 버전으로 다듬었습니다.</p></div>
+        <div class="media"><div class="row keep" style="--sum:1.500"><figure style="--ar:0.750"><img src="img/20260830_모집릴스_기획부터.jpg" width="1080" height="1440" loading="lazy" decoding="async" alt="실내 코트 장면 위에 기획부터 같이 합니다라는 자막이 있는 릴스 화면"><figcaption><time>2026.08.30</time>릴스 12초 장면</figcaption></figure><figure style="--ar:0.750"><img src="img/20260830_모집릴스_스티커.jpg" width="1080" height="1440" loading="lazy" decoding="async" alt="4FL 스티커와 협찬사 스티커가 붙은 종이 가방을 손에 든 릴스 화면"><figcaption><time>2026.08.30</time>릴스 18초 장면</figcaption></figure></div></div>
+      </li>
+    </ol>
+  </div>
+</section>
+<section class="sec mist" id="compare" aria-labelledby="compare-h">
+  <div class="wrap">
+    <header class="sec-head"><h2 id="compare-h">처음과 지금</h2></header>
+    <div class="pairs">
+      <article class="pair wide"><h3>같은 코트, 시즌1과 시즌2</h3><p class="what">참가자들이 코트에 줄지어 선 장면입니다. 시즌2는 실력별 3개 분반으로 나눠 진행했습니다.</p><div class="row" style="--sum:2.999"><figure class="before" style="--ar:1.500"><p class="ba"><b>전 · 시즌1</b><time>2026.04.04</time></p><img src="img/20260404_시즌1_코트_전후.jpg" width="1600" height="1067" loading="lazy" decoding="async" alt="시즌1에 참가자들이 코트 옆에 한 줄로 서 있는 모습"></figure><figure class="after" style="--ar:1.500"><p class="ba"><b>후 · 시즌2</b><time>2026.06.27</time></p><img src="img/20260627_시즌2_코트_전후.jpg" width="1600" height="1067" loading="lazy" decoding="async" alt="시즌2에 참가자들이 여러 줄로 나뉘어 코트를 가로지르는 모습"></figure></div></article>
+      <article class="pair wide"><h3>같은 카드, 라임에서 코랄로</h3><p class="what">문구와 사진은 그대로 두고 강조색만 코랄 #FF5A3C로 바꿨습니다.</p><div class="row keep" style="--sum:1.600"><figure class="before" style="--ar:0.800"><p class="ba"><b>전 · 라임</b><time>2026.08.24</time></p><img src="img/20260824_카드_라임_전후.jpg" width="1080" height="1350" loading="lazy" decoding="async" alt="라임색 상자에 어떤 모임이든 상관없습니다라고 적힌 이전 카드"></figure><figure class="after" style="--ar:0.800"><p class="ba"><b>후 · 코랄</b><time>2026.08.25</time></p><img src="img/20260825_카드_코랄_전후.jpg" width="1080" height="1350" loading="lazy" decoding="async" alt="코랄색 상자에 같은 문구가 적힌 지금 카드"></figure></div></article>
+    </div>
+  </div>
+</section>
+<section class="sec ink" id="numbers" aria-labelledby="numbers-h">
+  <div class="wrap">
+    <header class="sec-head"><h2 id="numbers-h">숫자</h2><p>시즌2가 끝난 뒤 참가자 설문과 운영 기록에서 읽은 값입니다.</p></header>
+    <ul class="stats">
+      <li class="stat"><p class="n">4.2<small>/5</small></p><p class="lb">시즌2 만족도</p><p class="src">기준 <time>2026.06.28</time><br>출처 시즌2 참가자 설문</p></li>
+      <li class="stat"><p class="n">8.0<small>/10</small></p><p class="lb">시즌2 추천 의향</p><p class="src">기준 <time>2026.06.28</time><br>출처 시즌2 참가자 설문</p></li>
+      <li class="stat"><p class="n">82<small>%</small></p><p class="lb">재참여 의사</p><p class="src">기준 <time>2026.06.28</time><br>출처 시즌2 참가자 설문</p></li>
+      <li class="stat"><p class="n">100<small>%</small></p><p class="lb">두 시즌 완주율</p><p class="src">기준 <time>2026.06.28</time><br>출처 4FL 운영 기록</p></li>
+    </ul>
+  </div>
+</section>
+<section class="sec" id="now" aria-labelledby="now-h">
+  <div class="wrap">
+    <header class="sec-head"><h2 id="now-h">지금과 다음</h2></header>
+    <div class="now-grid">
+      <div class="row" style="--sum:0.826"><figure style="--ar:0.826"><img src="img/20260825_클럽오너모집_포스터.jpg" width="1156" height="1400" loading="lazy" decoding="async" alt="코랄 상자에 어떤 모임이든 상관없습니다, 아래에 그래서 뭐 하고 놀래요라고 적힌 클럽 오너 모집 포스터"><figcaption><time>2026.08.25</time>클럽 오너 모집 포스터</figcaption></figure></div>
+      <dl class="now-list"><div><dt>지금</dt><dd>테니스 두 시즌을 바탕으로 클럽 오너 모집을 열었습니다.</dd></div><div><dt>다음</dt><dd>클럽 오너와 함께 테니스 밖의 테마로 모임을 넓힙니다.</dd></div><div><dt>링크</dt><dd><p class="links"><a href="https://www.instagram.com/4fl_wave/" target="_blank" rel="noopener">인스타그램 @4fl_wave →</a></p></dd></div></dl>
+    </div>
+  </div>
+</section>
+
+<nav class="pn" aria-labelledby="pn-h">
+  <div class="wrap">
+    <h2 id="pn-h">다른 프로젝트</h2>
+    <div class="pn-grid">
+      <a class="pn-card prev" href="../padd/"><img src="../padd/img/20261120_appstore_screens.jpg" width="1566" height="1100" loading="lazy" decoding="async" alt=""><span class="pn-k">← 이전 · 01</span><span class="pn-name">꾹꾹이</span><span class="pn-one">반려견 산책 앱</span></a>
+      <a class="pn-card next" href="../tete/"><img src="../tete/img/20261121_지금의_두사람_시안A.jpg" width="1536" height="779" loading="lazy" decoding="async" alt=""><span class="pn-k">다음 · 03 →</span><span class="pn-name">Two Eyes Two Ears</span><span class="pn-one">2인 협동 공포 게임</span></a>
+    </div>
+    <a class="pn-all" href="../">← 시영욱 포트폴리오 · 모든 작업 보기</a>
+  </div>
+</nav>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>사진은 4FL 행사 기록과 홍보 소재에서 골랐습니다. 참가자 얼굴이 크게 나온 사진은 빼고, 일부는 흐리게 처리했습니다.</p>
+    <p>© 2026 시영욱</p>
+  </div>
+</footer>
+</body>
+</html>
