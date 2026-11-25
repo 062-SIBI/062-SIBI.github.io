@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SEOULSIAM · 시영욱 포트폴리오</title>
+<meta name="description" content="한국 브랜드와 태국 크리에이터를 잇는 에이전시 SEOULSIAM이 자라 온 과정을 사진으로 보여 주는 페이지입니다.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFFFFF; --band:#F4F4F2; --dark:#111111;
+  --ink:#111111; --sub:#5F5F5A; --line:#E2E2DE;
+  --accent:#F2634B;
+  --wrap:1040px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:'Noto Sans KR',sans-serif;font-size:16px;line-height:1.7;word-break:keep-all;overflow-wrap:break-word}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 16px}
+.num,.date{font-family:'Archivo',sans-serif;font-variant-numeric:tabular-nums}
+
+/* top link */
+.top{border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;height:52px}
+.back{font-size:14px;font-weight:500;text-decoration:none;color:var(--sub)}
+.back:hover,.back:focus-visible{color:var(--ink)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+/* cover */
+.cover{padding:56px 0 64px}
+.cover-grid{display:grid;grid-template-columns:1fr;gap:32px;align-items:center}
+.cover h1{font-size:44px;line-height:1.15;font-weight:700;letter-spacing:-.02em}
+.cover h1 .ko{display:block;font-size:20px;font-weight:500;color:var(--sub);letter-spacing:0;margin-top:8px}
+.lede{font-size:20px;font-weight:500;margin-top:20px}
+.meta{margin-top:28px;border-top:1px solid var(--line)}
+.meta div{display:flex;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.meta dt{width:56px;flex:none;color:var(--sub)}
+.meta dd{flex:1}
+.hero figcaption{margin-top:10px}
+
+/* figures */
+figure{break-inside:avoid;page-break-inside:avoid}
+figure img{border:1px solid var(--line);background:#fff}
+figcaption{margin-top:8px;font-size:13px;line-height:1.55;color:var(--sub)}
+figcaption .date{color:var(--ink);font-weight:500;margin-right:6px}
+
+/* section heads */
+.sec{padding:64px 0}
+.sec h2{font-size:26px;font-weight:700;letter-spacing:-.01em}
+.sec .intro{margin-top:6px;color:var(--sub);font-size:15px}
+.band{background:var(--band)}
+.dark{background:var(--dark);color:#fff}
+
+/* growth timeline */
+.steps{list-style:none;margin-top:40px}
+.step{position:relative;padding:0 0 48px 28px;border-left:2px solid var(--line);margin-left:6px}
+.step:last-child{padding-bottom:0}
+.step::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.step .date{font-size:15px;font-weight:700;color:var(--ink)}
+.step h3{font-size:19px;font-weight:700;line-height:1.5;margin-top:2px}
+.step .why{font-size:15px;color:var(--sub);margin-top:2px}
+.shots{display:grid;gap:16px;margin-top:18px;align-items:start}
+.shots.one{grid-template-columns:1fr;max-width:720px}
+.shots.p3{grid-template-columns:repeat(2,1fr)}
+.shots.mix{grid-template-columns:1fr}
+.shots.narrow{max-width:420px}
+
+/* before / after */
+.pair{margin-top:40px}
+.pair + .pair{margin-top:56px}
+.pair h3{font-size:17px;font-weight:700}
+.pair-grid{display:grid;grid-template-columns:1fr;gap:20px;margin-top:14px}
+.tag{display:inline-block;font-size:13px;font-weight:700;padding:1px 8px;border-radius:3px;border:1px solid var(--line);margin-bottom:8px}
+.tag.now{border-color:var(--accent);border-width:2px;color:var(--ink)}
+
+/* numbers */
+.nums{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 20px;margin-top:36px}
+.nums .v{font-family:'Archivo',sans-serif;font-size:44px;font-weight:700;line-height:1.1}
+.nums .v small{font-family:'Noto Sans KR',sans-serif;font-size:18px;font-weight:500;margin-left:4px}
+.nums .k{font-size:15px;margin-top:6px}
+.nums .src{font-size:12px;color:#A3A39C;margin-top:4px;line-height:1.5}
+.dark .intro{color:#A3A39C}
+
+/* now & next */
+.now-grid{display:grid;grid-template-columns:1fr;gap:28px;margin-top:32px;align-items:start}
+.now-photo{max-width:340px}
+.next h3{font-size:15px;font-weight:500;color:var(--sub)}
+.next p{font-size:19px;font-weight:500;margin-top:4px}
+.links{list-style:none;margin-top:28px;border-top:1px solid var(--line)}
+.links li{border-bottom:1px solid var(--line)}
+.links a{display:flex;justify-content:space-between;padding:14px 0;text-decoration:none;font-weight:500}
+.links a span{color:var(--sub);font-size:14px;font-weight:400}
+.links a:hover{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px}
+
+footer{border-top:1px solid var(--line);padding:28px 0 48px}
+
+@media (min-width:760px){
+  .cover{padding:80px 0 88px}
+  .cover-grid{grid-template-columns:5fr 6fr;gap:56px}
+  .cover h1{font-size:60px}
+  .sec{padding:88px 0}
+  .sec h2{font-size:30px}
+  .step{padding-left:40px}
+  .shots.p3{grid-template-columns:repeat(3,1fr)}
+  .shots.mix{grid-template-columns:1fr 1.25fr}
+  .pair-grid{grid-template-columns:1fr 1fr;gap:28px}
+  .nums{grid-template-columns:repeat(4,1fr)}
+  .now-grid{grid-template-columns:340px 1fr;gap:48px}
+}
+
+@media print{
+  @page{size:A4;margin:14mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{font-size:11pt}
+  .top{display:none}
+  .wrap{max-width:none;padding:0}
+  .cover,.sec{padding:10mm 0}
+  .cover-grid{grid-template-columns:1fr;gap:6mm}
+  .cover h1{font-size:30pt}
+  img{max-height:120mm;width:auto;max-width:100%}
+  .sec h2,.sec .intro,.step .date,.step h3,.step .why,.pair h3{break-after:avoid;page-break-after:avoid}
+  #s-grow,#s-ba,#s-now{break-before:page;page-break-before:always}
+  .shots.p3{grid-template-columns:repeat(3,1fr)}
+  .shots.mix{grid-template-columns:1fr 1fr}
+  .shots.p3 img,.shots.mix img{max-height:90mm}
+  .pair-grid{grid-template-columns:1fr 1fr}
+  .nums{grid-template-columns:repeat(4,1fr)}
+  .step{break-inside:avoid;page-break-inside:avoid;padding-bottom:8mm}
+  .pair{break-inside:avoid;page-break-inside:avoid}
+  .now-grid{grid-template-columns:60mm 1fr}
+  .links a::after{content:" (" attr(href) ")";font-size:9pt;color:var(--sub)}
+}
+</style>
+</head>
+<body>
+
+<nav class="top" aria-label="상단">
+  <div class="wrap"><a class="back" href="https://062-sibi.github.io/">← 시영욱 포트폴리오</a></div>
+</nav>
+
+<main>
+<header class="cover">
+  <div class="wrap cover-grid">
+    <div>
+      <h1>SEOULSIAM<span class="ko">서울시암</span></h1>
+      <p class="lede">한국 브랜드와 태국 크리에이터를 잇는 에이전시</p>
+      <dl class="meta">
+        <div><dt>기간</dt><dd class="num">2026.09.22 ~ 현재</dd></div>
+        <div><dt>역할</dt><dd>공동대표 · 사업 기획, 브랜드·회사소개서, 인스타 매거진 운영</dd></div>
+      </dl>
+    </div>
+    <figure class="hero">
+      <img src="img/20261126_인스타_첫줄_지금.jpg" width="671" height="297" alt="인스타그램 매거진 첫 줄에 놓인 최근 세 편의 표지">
+      <figcaption><span class="date">2026.11.26</span>인스타 매거진 첫 줄, 최근 세 편</figcaption>
+    </figure>
+  </div>
+</header>
+
+<section class="sec band" id="s-grow" aria-labelledby="h-grow">
+  <div class="wrap">
+    <h2 id="h-grow">성장 과정</h2>
+    <p class="intro">처음부터 지금까지 일곱 단계입니다.</p>
+    <ol class="steps">
+
+      <li class="step">
+        <p class="date">2026.09.22</p>
+        <h3>회사 이름을 SEOULSIAM으로 정하고 로고 두 안을 냈습니다.</h3>
+        <div class="shots one">
+          <figure>
+            <img src="img/20260922_로고_두안_제안.png" width="1328" height="514" alt="기획서에 실린 로고 두 안. 위는 둥근 테두리의 E안, 아래는 글자 간격을 넓힌 F안">
+            <figcaption><span class="date">2026.09.22</span>기획서에 담은 로고 두 안, 위가 E안 아래가 F안</figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step">
+        <p class="date">2026.10.20</p>
+        <h3>브랜드에 보낼 회사소개서 첫 판을 만들었습니다.</h3>
+        <div class="shots mix">
+          <figure>
+            <img src="img/20261020_회사소개서_첫판_표지.png" width="1268" height="1238" alt="회사소개서 첫 판 표지. 태국 크리에이터의 리뷰로 한국 화장품을 알립니다">
+            <figcaption><span class="date">2026.10.20</span>회사소개서 첫 판 표지</figcaption>
+          </figure>
+          <figure>
+            <img src="img/20261020_회사소개서_크리에이터구성.png" width="1600" height="900" alt="목표별로 크리에이터를 어떻게 섞는지 점으로 그린 회사소개서 한 장">
+            <figcaption><span class="date">2026.10.20</span>목적에 따라 크리에이터를 섞는 방법을 그림으로 설명</figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step">
+        <p class="date">2026.10.22</p>
+        <h3>인스타 매거진을 열고 첫 카드를 하루에 세 번 다시 그렸습니다.</h3>
+        <p class="why">잘되는 한국 인스타 매거진과 나란히 놓고 고쳤습니다.</p>
+        <div class="shots p3">
+          <figure>
+            <img src="img/20261022_카드_1안_롱블랙식.png" width="1080" height="1350" alt="첫 안. 아이보리 바탕에 방콕과 서울 기온을 비교한 글 중심 카드">
+            <figcaption><span class="date">2026.10.22</span>첫 안, 단색 바탕에 글을 길게 쓴 카드</figcaption>
+          </figure>
+          <figure>
+            <img src="img/20261022_카드_2안_숫자강조.png" width="1080" height="1350" alt="두 번째 안. 검정 바탕에 27.3도를 크게 쓴 카드">
+            <figcaption><span class="date">2026.10.22</span>두 번째 안, 같은 내용을 숫자 하나로 줄인 카드</figcaption>
+          </figure>
+          <figure>
+            <img src="img/20261022_카드_3안_포스터.png" width="1080" height="1350" alt="세 번째 안. 분홍 바탕에 연두색 큰 글씨로 K뷰티의 다음 동네, 방콕이라고 쓴 포스터형 표지">
+            <figcaption><span class="date">2026.10.22</span>세 번째 안, 방콕 택시 색을 가져온 포스터형 표지</figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step">
+        <p class="date">2026.10.29</p>
+        <h3>카드를 미리 만들어 정해진 시간에 예약 발행했습니다.</h3>
+        <div class="shots one narrow">
+          <figure>
+            <img src="img/20261029_뉴스카드_광고주인증.jpg" width="1080" height="1350" alt="태국 SNS 광고주 인증 제도를 표처럼 정리한 검정 바탕 뉴스 카드">
+            <figcaption><span class="date">2026.10.29</span>예약 발행으로 올린 태국 마케팅 뉴스 카드</figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step">
+        <p class="date">2026.11.05</p>
+        <h3>브랜드킷과 명함 시안으로 쓰는 곳마다 모양을 맞췄습니다.</h3>
+        <div class="shots mix">
+          <figure>
+            <img src="img/20261105_명함시안_앞면.png" width="812" height="1042" alt="명함 앞면 두 안. 아이보리 바탕 F 로고, 코랄 바탕 E 로고">
+            <figcaption><span class="date">2026.11.05</span>명함 앞면 두 안, 위가 F 로고 아래가 E 로고</figcaption>
+          </figure>
+          <figure>
+            <img src="img/20261105_브랜드킷.png" width="1600" height="1233" alt="로고 네 가지, 인스타 프로필 사진, 색 네 가지, 글꼴을 한 장에 모은 브랜드킷">
+            <figcaption><span class="date">2026.11.05</span>로고·색·글꼴을 한 장에 모은 브랜드킷</figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step">
+        <p class="date">2026.11.13</p>
+        <h3>뷰티 영업 글을 접고 방콕 컬처 매거진으로 바꿨습니다.</h3>
+        <p class="why">한국인 독자를 먼저 모아야 크리에이터와도 연결된다고 봤습니다.</p>
+        <div class="shots p3">
+          <figure>
+            <img src="img/20261115_매거진_비엔날레_표지.jpg" width="1080" height="1262" alt="노을 진 사원 사진 위에 방콕 사원이 미술관이 됐어요라고 쓴 표지">
+            <figcaption><span class="date">2026.11.15</span>방향을 바꾼 첫 호, 방콕 아트 비엔날레</figcaption>
+          </figure>
+          <figure>
+            <img src="img/20261117_매거진_러이끄라통_릴스표지.jpg" width="971" height="1600" alt="꽃 장식 사진 위에 11월 방콕 여행이면 이날 밤은 비워 두세요라고 쓴 릴스 표지">
+            <figcaption><span class="date">2026.11.17</span>같은 틀로 만든 첫 릴스 표지</figcaption>
+          </figure>
+          <figure>
+            <img src="img/20261119_매거진_카놈크록_표지.jpg" width="1080" height="1262" alt="무쇠 팬에 굽는 카놈크록 사진 위에 태국 디저트 1위, 망고밥이 아니었어요라고 쓴 표지">
+            <figcaption><span class="date">2026.11.19</span>먹거리 호, 태국 디저트 1위 카놈크록</figcaption>
+          </figure>
+        </div>
+      </li>
+
+      <li class="step">
+        <p class="date">2026.11.25</p>
+        <h3>E안 로고를 둥근 글자로 다듬어 벡터 파일로 정리했습니다.</h3>
+        <div class="shots one">
+          <figure>
+            <img src="img/20261125_로고E안_벡터_정리.png" width="1600" height="1200" alt="코랄, 검정, 흰색, 채운 배지, 태그라인 버전과 프로필 원형까지 E안 로고를 한 장에 모은 정리표">
+            <figcaption><span class="date">2026.11.25</span>E안 로고를 색·용도별 벡터 파일로 정리</figcaption>
+          </figure>
+        </div>
+      </li>
+
+    </ol>
+  </div>
+</section>
+
+<section class="sec" id="s-ba" aria-labelledby="h-ba">
+  <div class="wrap">
+    <h2 id="h-ba">전후 비교</h2>
+
+    <div class="pair">
+      <h3>회사소개서의 진행 일정 장</h3>
+      <div class="pair-grid">
+        <figure>
+          <span class="tag">처음</span>
+          <img src="img/20261020_진행일정_처음.png" width="1600" height="900" alt="처음 판. 계약부터 첫 리포트까지 5주라는 제목의 일정 장">
+          <figcaption><span class="date">2026.10.20</span>계약부터 리포트까지 5주로만 보여 줬습니다.</figcaption>
+        </figure>
+        <figure>
+          <span class="tag now">지금</span>
+          <img src="img/20261105_진행일정_지금.png" width="1600" height="900" alt="지금 판. 보통 계약 후 한 달 안에 게시를 마칩니다라는 제목에 제품 배송 안내가 더해진 일정 장">
+          <figcaption><span class="date">2026.11.05</span>브랜드가 묻던 제품 배송까지 한 장에 넣었습니다.</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="pair">
+      <h3>로고 E안</h3>
+      <div class="pair-grid">
+        <figure>
+          <span class="tag">처음</span>
+          <img src="img/20260922_로고E안_처음.png" width="1328" height="240" alt="처음 제안한 E안 로고 두 가지 색">
+          <figcaption><span class="date">2026.09.22</span>제안서 속 E안</figcaption>
+        </figure>
+        <figure>
+          <span class="tag now">지금</span>
+          <img src="img/20261125_로고E안_지금.png" width="1520" height="212" alt="다듬은 E안 로고. 둥근 글자와 두꺼운 테두리">
+          <figcaption><span class="date">2026.11.25</span>둥근 글자와 두꺼운 테두리로 다듬은 E안</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec dark" aria-labelledby="h-num">
+  <div class="wrap">
+    <h2 id="h-num">숫자</h2>
+    <div class="nums">
+      <div>
+        <p class="v">10<small>개</small></p>
+        <p class="k">인스타 매거진 게시물</p>
+        <p class="src">2026.11.26 기준 · 인스타그램 프로필</p>
+      </div>
+      <div>
+        <p class="v">159<small>회</small></p>
+        <p class="k">릴스 한 편 최고 조회</p>
+        <p class="src">2026.11.26 기준 · Meta Business Suite</p>
+      </div>
+      <div>
+        <p class="v">257<small>명</small></p>
+        <p class="k">크리에이터 후보 리스트</p>
+        <p class="src">2026.10.16 기준 · 자체 크리에이터 리스트</p>
+      </div>
+      <div>
+        <p class="v">14<small>판</small></p>
+        <p class="k">회사소개서 수정</p>
+        <p class="src">2026.11.05 기준 · 회사소개서 v14 파일</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="s-now" aria-labelledby="h-now">
+  <div class="wrap">
+    <h2 id="h-now">지금과 다음</h2>
+    <div class="now-grid">
+      <figure class="now-photo">
+        <img src="img/20261126_릴스표지_빛축제.jpg" width="900" height="1600" alt="강 건너 사원 야경 위에 12월 13일까지 방콕 강이 빛나요라고 쓴 릴스 표지">
+        <figcaption><span class="date">2026.11.26</span>방콕 강 빛 축제 릴스 표지</figcaption>
+      </figure>
+      <div class="next">
+        <h3>다음</h3>
+        <p>방콕 매거진을 주 3회 이어 가며 태국 크리에이터와의 연결을 넓히려 합니다.</p>
+        <ul class="links">
+          <li><a href="https://www.instagram.com/seoulsiam.mag/">인스타그램 매거진 <span>인스타그램 ↗</span></a></li>
+          <li><a href="https://www.instagram.com/seoulsiam.mag/reels/">릴스 모아 보기 <span>영상 ↗</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap"><a class="back" href="https://062-sibi.github.io/">← 시영욱 포트폴리오</a></div>
+</footer>
+
+</body>
+</html>
